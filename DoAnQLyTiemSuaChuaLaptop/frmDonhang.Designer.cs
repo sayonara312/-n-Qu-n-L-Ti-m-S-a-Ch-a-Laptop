@@ -65,6 +65,8 @@
             this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +121,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cbTrangThai);
             this.groupBox1.Controls.Add(this.tbSoTien);
@@ -140,10 +144,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(861, 140);
+            this.groupBox1.Size = new System.Drawing.Size(867, 140);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Khách Hàng";
+            this.groupBox1.Text = "Thông Tin Đơn Hàng";
             // 
             // label7
             // 
@@ -270,7 +274,7 @@
             // 
             // tbSoTien
             // 
-            this.tbSoTien.Location = new System.Drawing.Point(588, 55);
+            this.tbSoTien.Location = new System.Drawing.Point(588, 104);
             this.tbSoTien.Name = "tbSoTien";
             this.tbSoTien.Size = new System.Drawing.Size(123, 20);
             this.tbSoTien.TabIndex = 25;
@@ -278,7 +282,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(520, 58);
+            this.label9.Location = new System.Drawing.Point(520, 107);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 13);
             this.label9.TabIndex = 24;
@@ -295,7 +299,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(717, 59);
+            this.label10.Location = new System.Drawing.Point(717, 108);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 13);
             this.label10.TabIndex = 27;
@@ -363,6 +367,23 @@
             this.SoTien.HeaderText = "Số Tiền";
             this.SoTien.Name = "SoTien";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(588, 52);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 46);
+            this.textBox1.TabIndex = 29;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(520, 56);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Tên Dịch Vụ:";
+            // 
             // frmDonhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +441,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label11;
     }
 }
