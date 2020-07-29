@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DoAnQLyTiemSuaChuaLaptop
 {
-    public partial class Form1 : Form
+    public partial class frmNhanVien : Form
     {
-        public Form1()
+        public frmNhanVien()
         {
             InitializeComponent();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
