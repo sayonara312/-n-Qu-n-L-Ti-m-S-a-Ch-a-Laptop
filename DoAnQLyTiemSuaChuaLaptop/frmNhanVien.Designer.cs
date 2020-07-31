@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbDiaChi = new System.Windows.Forms.TextBox();
@@ -45,6 +45,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbTenNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.tbTim = new System.Windows.Forms.TextBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,28 +56,31 @@
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbGT = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.raNam = new System.Windows.Forms.RadioButton();
+            this.raNu = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // simpleButton3
+            // btnXoa
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(648, 31);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(84, 36);
-            this.simpleButton3.TabIndex = 23;
-            this.simpleButton3.Text = "Xóa";
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(558, 121);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(84, 36);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // simpleButton2
+            // btnSua
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(558, 79);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(84, 36);
-            this.simpleButton2.TabIndex = 22;
-            this.simpleButton2.Text = "Sửa";
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnSua.Location = new System.Drawing.Point(558, 79);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(84, 36);
+            this.btnSua.TabIndex = 22;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // simpleButton1
             // 
@@ -83,11 +90,12 @@
             this.simpleButton1.Size = new System.Drawing.Size(84, 36);
             this.simpleButton1.TabIndex = 21;
             this.simpleButton1.Text = "Thêm";
+            this.simpleButton1.Click += new System.EventHandler(this.btnThem);
             // 
-            // dataGridView1
+            // dgvNhanVien
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.TenNV,
             this.MaNV,
@@ -95,14 +103,16 @@
             this.GioiTinh,
             this.Email,
             this.DiaChi});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 177);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(753, 173);
-            this.dataGridView1.TabIndex = 20;
+            this.dgvNhanVien.Location = new System.Drawing.Point(12, 249);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.Size = new System.Drawing.Size(753, 173);
+            this.dgvNhanVien.TabIndex = 20;
+            this.dgvNhanVien.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvNhanVien_DataBindingComplete);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbGT);
+            this.groupBox1.Controls.Add(this.raNu);
+            this.groupBox1.Controls.Add(this.raNam);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.tbDiaChi);
             this.groupBox1.Controls.Add(this.label6);
@@ -212,6 +222,46 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên NV: ";
             // 
+            // btnLuu
+            // 
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(648, 31);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(84, 36);
+            this.btnLuu.TabIndex = 24;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(648, 79);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(84, 36);
+            this.btnHuy.TabIndex = 25;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(208, 223);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(37, 20);
+            this.btnTimKiem.TabIndex = 31;
+            this.btnTimKiem.Text = "Tìm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // tbTim
+            // 
+            this.tbTim.Location = new System.Drawing.Point(12, 223);
+            this.tbTim.Name = "tbTim";
+            this.tbTim.Size = new System.Drawing.Size(190, 20);
+            this.tbTim.TabIndex = 30;
+            this.tbTim.Text = "Tìm kiếm theo Mã NV...";
+            this.tbTim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTim_KeyPress);
+            this.tbTim.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbTim_MouseDown);
+            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -220,72 +270,99 @@
             // 
             // TenNV
             // 
+            this.TenNV.DataPropertyName = "TenNV";
             this.TenNV.HeaderText = "Tên NV";
             this.TenNV.Name = "TenNV";
             this.TenNV.Width = 120;
             // 
             // MaNV
             // 
+            this.MaNV.DataPropertyName = "MaNV";
             this.MaNV.HeaderText = "Mã NV";
             this.MaNV.Name = "MaNV";
             // 
             // SDT
             // 
+            this.SDT.DataPropertyName = "SoDT";
             this.SDT.HeaderText = "SĐT";
             this.SDT.Name = "SDT";
             this.SDT.Width = 70;
             // 
             // GioiTinh
             // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
             this.GioiTinh.HeaderText = "Giới Tính";
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Width = 50;
             // 
             // Email
             // 
+            this.Email.DataPropertyName = "Email";
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             this.Email.Width = 120;
             // 
             // DiaChi
             // 
+            this.DiaChi.DataPropertyName = "DiaChi";
             this.DiaChi.HeaderText = "Địa Chỉ";
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Width = 200;
             // 
-            // cbGT
+            // raNam
             // 
-            this.cbGT.FormattingEnabled = true;
-            this.cbGT.Location = new System.Drawing.Point(318, 26);
-            this.cbGT.Name = "cbGT";
-            this.cbGT.Size = new System.Drawing.Size(78, 21);
-            this.cbGT.TabIndex = 14;
+            this.raNam.AutoSize = true;
+            this.raNam.Location = new System.Drawing.Point(317, 27);
+            this.raNam.Name = "raNam";
+            this.raNam.Size = new System.Drawing.Size(47, 17);
+            this.raNam.TabIndex = 14;
+            this.raNam.TabStop = true;
+            this.raNam.Text = "Nam";
+            this.raNam.UseVisualStyleBackColor = true;
+            this.raNam.CheckedChanged += new System.EventHandler(this.raNam_CheckedChanged);
             // 
-            // NhanVien
+            // raNu
+            // 
+            this.raNu.AutoSize = true;
+            this.raNu.Location = new System.Drawing.Point(370, 27);
+            this.raNu.Name = "raNu";
+            this.raNu.Size = new System.Drawing.Size(39, 17);
+            this.raNu.TabIndex = 15;
+            this.raNu.TabStop = true;
+            this.raNu.Text = "Nữ";
+            this.raNu.UseVisualStyleBackColor = true;
+            // 
+            // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.tbTim);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.groupBox1);
-            this.Name = "NhanVien";
+            this.Name = "frmNhanVien";
             this.Text = "Quản Lý Nhân Viên";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmNhanVien_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbDiaChi;
@@ -298,6 +375,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox tbTim;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
@@ -305,6 +386,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.ComboBox cbGT;
+        private System.Windows.Forms.RadioButton raNu;
+        private System.Windows.Forms.RadioButton raNam;
     }
 }

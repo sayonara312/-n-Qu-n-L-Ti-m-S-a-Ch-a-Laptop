@@ -2,8 +2,8 @@
 GO
 --Tao CSDL
 CREATE DATABASE QLTIEMSUACHUAMAYTINH
-Go
 
+Go
 USE QLTIEMSUACHUAMAYTINH
 Go 
 
@@ -30,7 +30,7 @@ CREATE TABLE KHACHHANG(
 	SoDT VARCHAR(12) NOT NULL,
 	DiaChi NVARCHAR(50) NULL,
 	Email varchar(50) NULL,
- CONSTRAINT PK_KhachHang PRIMARY KEY(MAKH)
+	CONSTRAINT PK_KhachHang PRIMARY KEY(MAKH)
 
 );
 GO
@@ -58,7 +58,7 @@ CREATE TABLE CTHD(
 	TenDichVu nvarchar(50) NULL,
 	HinhThucSua nvarchar(30) NULL,
 	TrangThai nvarchar(20) NULL,
- CONSTRAINT PK_CTHD PRIMARY KEY  (MaCTHD)
+	CONSTRAINT PK_CTHD PRIMARY KEY  (MaCTHD)
 ) 
 
 
@@ -83,9 +83,9 @@ ADD	CONSTRAINT FK_CTHD_KHACHHANG FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH),
 
 
 --Insert table KHACHHANG
-insert into KHACHHANG values('KH0001', N'Nguyễn Mạnh Hưng',1,'0913133756',N'Phú lợi, Thủ Dầu Một, Bình Dương','manhhung@gmail.com')
-insert into KHACHHANG values('KH0002', N'Lê Thị Trúc Anh',0,'0908350777',N'Tân Định. Bến Cát, Bình Dương','trucanh@gmail.com')
-insert into KHACHHANG values('KH0003', N'Phạm Thế Phong',1,'01265123744',N'Phú hòa, Thủ Dầu Một, Bình Dương','thephong@gmail.com')
+insert into KHACHHANG values('KH0001', N'Nguyễn Mạnh Hưng', 1 ,'0913133756',N'Phú lợi, Thủ Dầu Một, Bình Dương','manhhung@gmail.com')
+insert into KHACHHANG values('KH0002', N'Lê Thị Trúc Anh', 0 ,'0908350777',N'Tân Định. Bến Cát, Bình Dương','trucanh@gmail.com')
+insert into KHACHHANG values('KH0003', N'Phạm Thế Phong', 1 ,'01265123744',N'Phú hòa, Thủ Dầu Một, Bình Dương','thephong@gmail.com')
 
 
 
@@ -93,7 +93,7 @@ insert into KHACHHANG values('KH0003', N'Phạm Thế Phong',1,'01265123744',N'P
 --Insert table NHANVIEN
 insert into NHANVIEN values('NV0001', N'Nguyễn Văn Ca', 1 ,N'Bình Định','123456', 'vanca@gmail.com','admin','123')
 insert into NHANVIEN values('NV0002', N'Nguyễn Vĩnh Quang', 1 ,N'An Giang', '0913131788', 'phutphat@gmail.com','nvquang','123')
-insert into NHANVIEN values('NV0003', N'Nguyễn Kim Ngân',0 ,N'Bình Dương', '098123733', 'vinhquang@gmail.com','nkngan','123')
+insert into NHANVIEN values('NV0003', N'Nguyễn Kim Ngân', 0 ,N'Bình Dương', '098123733', 'vinhquang@gmail.com','nkngan','123')
 
 
 
@@ -112,77 +112,3 @@ insert into CTHD values(3,'DH0003', 'KH0001' , 500000,'Dell Latitude E7480',N'C�
 insert into CTHD values(4,'DH0004', 'KH0002' , 1000000,'Acer ConceptD 7',N'Thay màn hình',N'Sửa Chữa',N'Đã Sửa')
 insert into CTHD values(5,'DH0005', 'KH0002' , 0,'Acer ConceptD 7',N'Thay Ổ Cứng',N'Sửa Chữa',N'Đang Sửa')
 insert into CTHD values(6,'DH0006', 'KH0003', 30000000,'Dell Inspiron 7577 Gaming',N'Thay MainBoard',N'Sửa Chữa',N'Đã Sửa')
--- SoLuong, DonGia và DonGiaGoc >=0 trong bảng SANPHAM 
-alter table SANPHAM add constraint  CHK_SoLuong Check (SoLuong>=0)
-alter table SANPHAM add constraint  CHK_DonGia Check (DonGia>=0)
-alter table SANPHAM add constraint  CHK_DonGiaGoc Check (GiaGoc>=0)
-
--- DonGia >= DonGiaGoc của 1 sẩn phẩm trong bảng SANPHAM
-alter table SANPHAM add constraint  CHK_DonGia_GiaGoc Check (DonGia>=GiaGoc)
-Go
--- Tigger 2: SoLuong của một sản phẩm khi thêm mới CTDH <= SoLuong tồn của sản phẩm đó trong bản SANPHAM. 
--- Cập nhật lại SoLuong sản phẩm trong bảng SANPHAM
-Create trigger trg_InsertCTHD_SoLuong
-on CTHD for insert
-as
-	declare @SLBan int, @SLTon int, @MaSP nvarchar(10)
-	select @SLBan=SoLuong, @MaSP = MaSP from inserted
-	select @SLTon = SoLuong from SANPHAM
-	if(@SLTon>=@SLBan)
-		update SANPHAM
-		Set SoLuong = @SLTon - @SLBan
-		where MaSP = @MaSP
-	else
-		begin 
-		    raiserror (N'Vượt quá số lượng tồn!!!',0,1)
-			rollback transaction
-		end
-	 
-Go
-
--- Xây dựng hàm phát sinh mã đơn hàng có dạng "DH0001" theo thứ tự tăng dần
-Create function fn_CreateMaHD()
-	returns nvarchar(10)
-begin
-		
-		declare @MaHDOld varchar(10), @MaHDNew nvarchar(10)
-		select Top 1 @MaHDOld=MaHD from DONHANG order by MaHD Desc
-		Return 'HD' + format(right(@MaHDOld,4)+1,'000#')
-end
-Go
-
-select dbo.fn_CreateMaHD()
-
-
--- Xây dựng store phát sinh mã đơn hàng có dạng "DH0001" theo thứ tự tăng dần
-Go
-Create procedure proc_CreateMaHD
-	@MaHDNew nvarchar(10) output
-as
-		
-		declare @MaHDOld varchar(10)
-		select Top 1 @MaHDOld=MaHD from DONHANG order by MaHD Desc
-		set @MaHDNew = 'HD' + format(right(@MaHDOld,4)+1,'000#')
-Go
-
-Declare @MaHD nvarchar(10) 
-Exec dbo.proc_CreateMaHD @MaHD output
-print @MaHD
-
-Create trigger trg_InsertCTHD_DonHang
-on DonHang for insert
-as
-	declare @SLBan int, @SLTon int, @MaSP nvarchar(10)
-	select @SLBan=SoLuong, @MaSP = MaSP from inserted
-	select @SLTon = SoLuong from SANPHAM
-	if(@SLTon>=@SLBan)
-		update SANPHAM
-		Set SoLuong = @SLTon - @SLBan
-		where MaSP = @MaSP
-	else
-		begin 
-		    raiserror (N'Vượt quá số lượng tồn!!!',0,1)
-			rollback transaction
-		end
-	 
-Go

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmMain : Form
@@ -17,28 +17,32 @@ namespace DoAnQLyTiemSuaChuaLaptop
             InitializeComponent();
         }
 
-        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
             
         }
 
-        private void btnKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            int index = tabControl1.TabPages.IndexOfKey("tabPageQLNhanVien");
+            if(index>=0)
+            {
+                tabControl1.SelectedIndex = index;
 
-        }
-
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            }
+            else
+            {
+                frmNhanVien f = new frmNhanVien();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageQLNhanVien";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControl1.TabPages.Add(p);
+                f.Show();
+                
+            }
 
         }
     }
