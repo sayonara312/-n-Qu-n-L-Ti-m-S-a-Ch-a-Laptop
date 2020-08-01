@@ -29,10 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDonhang));
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.dgvDonHang = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TTMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbTenDV = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,50 +67,40 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbMaDH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TTMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // simpleButton3
+            // btnXoa
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(899, 123);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(84, 36);
-            this.simpleButton3.TabIndex = 23;
-            this.simpleButton3.Text = "Xóa";
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(899, 123);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(84, 36);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // simpleButton2
+            // btnSua
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(899, 75);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(84, 36);
-            this.simpleButton2.TabIndex = 22;
-            this.simpleButton2.Text = "Sửa";
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnSua.Location = new System.Drawing.Point(899, 75);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(84, 36);
+            this.btnSua.TabIndex = 22;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // simpleButton1
+            // btnThem
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(899, 27);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(84, 36);
-            this.simpleButton1.TabIndex = 21;
-            this.simpleButton1.Text = "Thêm";
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.Location = new System.Drawing.Point(899, 27);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(84, 36);
+            this.btnThem.TabIndex = 21;
+            this.btnThem.Text = "Thêm";
             // 
             // dgvDonHang
             // 
@@ -120,6 +122,79 @@
             this.dgvDonHang.Name = "dgvDonHang";
             this.dgvDonHang.Size = new System.Drawing.Size(1165, 173);
             this.dgvDonHang.TabIndex = 20;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // MaDH
+            // 
+            this.MaDH.DataPropertyName = "MaDH";
+            this.MaDH.HeaderText = "Mã Đơn Hàng";
+            this.MaDH.Name = "MaDH";
+            this.MaDH.Width = 70;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên KH";
+            this.TenKH.Name = "TenKH";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SoDT";
+            this.SDT.HeaderText = "SĐT KH";
+            this.SDT.Name = "SDT";
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.DataPropertyName = "NgayLap";
+            this.NgayLap.HeaderText = "Ngày Lập ";
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // TenMay
+            // 
+            this.TenMay.DataPropertyName = "TenMay";
+            this.TenMay.HeaderText = "Tên Máy";
+            this.TenMay.Name = "TenMay";
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Kỹ Thuật Sửa";
+            this.TenNV.Name = "TenNV";
+            // 
+            // TTMay
+            // 
+            this.TTMay.DataPropertyName = "TrinhTrangMay";
+            this.TTMay.HeaderText = "Trình Trạng Máy";
+            this.TTMay.Name = "TTMay";
+            // 
+            // HinhThucSua
+            // 
+            this.HinhThucSua.DataPropertyName = "HinhThucSua";
+            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
+            this.HinhThucSua.Name = "HinhThucSua";
+            // 
+            // TenDV
+            // 
+            this.TenDV.DataPropertyName = "TenDichVu";
+            this.TenDV.HeaderText = "Tên Dịch Vụ";
+            this.TenDV.Name = "TenDV";
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.Name = "TrangThai";
+            // 
+            // SoTien
+            // 
+            this.SoTien.DataPropertyName = "SoTien";
+            this.SoTien.HeaderText = "Số Tiền";
+            this.SoTien.Name = "SoTien";
             // 
             // groupBox1
             // 
@@ -150,7 +225,6 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Đơn Hàng";
-      
             // 
             // tbTenDV
             // 
@@ -326,107 +400,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã DH: ";
             // 
-            // simpleButton5
+            // btnHuy
             // 
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(989, 75);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(84, 36);
-            this.simpleButton5.TabIndex = 27;
-            this.simpleButton5.Text = "Hủy";
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(989, 75);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(84, 36);
+            this.btnHuy.TabIndex = 27;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // simpleButton4
+            // btnLuu
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(989, 27);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(84, 36);
-            this.simpleButton4.TabIndex = 26;
-            this.simpleButton4.Text = "Lưu";
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 50;
-            // 
-            // MaDH
-            // 
-            this.MaDH.DataPropertyName = "MaDH";
-            this.MaDH.HeaderText = "Mã Đơn Hàng";
-            this.MaDH.Name = "MaDH";
-            this.MaDH.Width = 70;
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên KH";
-            this.TenKH.Name = "TenKH";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SoDT";
-            this.SDT.HeaderText = "SĐT KH";
-            this.SDT.Name = "SDT";
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.DataPropertyName = "NgayLap";
-            this.NgayLap.HeaderText = "Ngày Lập ";
-            this.NgayLap.Name = "NgayLap";
-            // 
-            // TenMay
-            // 
-            this.TenMay.DataPropertyName = "TenMay";
-            this.TenMay.HeaderText = "Tên Máy";
-            this.TenMay.Name = "TenMay";
-            // 
-            // TenNV
-            // 
-            this.TenNV.DataPropertyName = "TenNV";
-            this.TenNV.HeaderText = "Kỹ Thuật Sửa";
-            this.TenNV.Name = "TenNV";
-            // 
-            // TTMay
-            // 
-            this.TTMay.DataPropertyName = "TrinhTrangMay";
-            this.TTMay.HeaderText = "Trình Trạng Máy";
-            this.TTMay.Name = "TTMay";
-            // 
-            // HinhThucSua
-            // 
-            this.HinhThucSua.DataPropertyName = "HinhThucSua";
-            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
-            this.HinhThucSua.Name = "HinhThucSua";
-            // 
-            // TenDV
-            // 
-            this.TenDV.DataPropertyName = "TenDichVu";
-            this.TenDV.HeaderText = "Tên Dịch Vụ";
-            this.TenDV.Name = "TenDV";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.Name = "TrangThai";
-            // 
-            // SoTien
-            // 
-            this.SoTien.DataPropertyName = "SoTien";
-            this.SoTien.HeaderText = "Số Tiền";
-            this.SoTien.Name = "SoTien";
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(989, 27);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(84, 36);
+            this.btnLuu.TabIndex = 26;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmDonhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 364);
-            this.Controls.Add(this.simpleButton5);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvDonHang);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDonhang";
@@ -441,9 +444,9 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
+        private DevExpress.XtraEditors.SimpleButton btnThem;
         private System.Windows.Forms.DataGridView dgvDonHang;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
@@ -467,8 +470,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbTenDV;
         private System.Windows.Forms.Label label11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
