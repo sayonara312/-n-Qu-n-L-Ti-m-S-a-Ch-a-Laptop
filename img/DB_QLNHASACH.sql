@@ -16,11 +16,11 @@ CREATE TABLE NHANVIEN(
 	SoDT varchar(12) NOT NULL,
 	Email varchar(50) NULL,
 	UserName nvarchar(30) NOT NULL,
-	Password nvarchar(30) NULL,
+	Password nvarchar(30) NOT NULL,
 
  CONSTRAINT PK_NHANVIEN PRIMARY KEY (MaNV)
 )
-GO
+
 
 /****** Object:  Table KHACHHANG   ******/
 CREATE TABLE KHACHHANG(
