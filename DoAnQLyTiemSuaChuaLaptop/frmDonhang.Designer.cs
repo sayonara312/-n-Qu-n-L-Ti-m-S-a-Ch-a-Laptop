@@ -46,24 +46,24 @@
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTenDV = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cbTrangThai = new System.Windows.Forms.ComboBox();
             this.tbSoTien = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbTTM = new System.Windows.Forms.TextBox();
             this.dateNLap = new System.Windows.Forms.DateTimePicker();
             this.tbKTS = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbTenMay = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbSDT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbMaKH = new System.Windows.Forms.TextBox();
+            this.tbTenKH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbMaDH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -185,24 +185,24 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbTenDV);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cbTrangThai);
             this.groupBox1.Controls.Add(this.tbSoTien);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbTTM);
             this.groupBox1.Controls.Add(this.dateNLap);
             this.groupBox1.Controls.Add(this.tbKTS);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.tbEmail);
+            this.groupBox1.Controls.Add(this.tbTenMay);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.tbSDT);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tbMaKH);
+            this.groupBox1.Controls.Add(this.tbTenKH);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbMaDH);
             this.groupBox1.Controls.Add(this.label1);
@@ -213,13 +213,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Đơn Hàng";
             // 
-            // textBox1
+            // tbTenDV
             // 
-            this.textBox1.Location = new System.Drawing.Point(588, 52);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 46);
-            this.textBox1.TabIndex = 29;
+            this.tbTenDV.Location = new System.Drawing.Point(588, 52);
+            this.tbTenDV.Multiline = true;
+            this.tbTenDV.Name = "tbTenDV";
+            this.tbTenDV.Size = new System.Drawing.Size(123, 46);
+            this.tbTenDV.TabIndex = 29;
             // 
             // label11
             // 
@@ -272,13 +272,13 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Trạng Thái:";
             // 
-            // textBox2
+            // tbTTM
             // 
-            this.textBox2.Location = new System.Drawing.Point(351, 78);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 46);
-            this.textBox2.TabIndex = 21;
+            this.tbTTM.Location = new System.Drawing.Point(351, 78);
+            this.tbTTM.Multiline = true;
+            this.tbTTM.Name = "tbTTM";
+            this.tbTTM.Size = new System.Drawing.Size(155, 46);
+            this.tbTTM.TabIndex = 21;
             // 
             // dateNLap
             // 
@@ -322,12 +322,12 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Trình Trạng Máy:";
             // 
-            // tbEmail
+            // tbTenMay
             // 
-            this.tbEmail.Location = new System.Drawing.Point(351, 52);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(155, 20);
-            this.tbEmail.TabIndex = 8;
+            this.tbTenMay.Location = new System.Drawing.Point(351, 52);
+            this.tbTenMay.Name = "tbTenMay";
+            this.tbTenMay.Size = new System.Drawing.Size(155, 20);
+            this.tbTenMay.TabIndex = 8;
             // 
             // label5
             // 
@@ -354,12 +354,12 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "SĐT KH:";
             // 
-            // tbMaKH
+            // tbTenKH
             // 
-            this.tbMaKH.Location = new System.Drawing.Point(78, 52);
-            this.tbMaKH.Name = "tbMaKH";
-            this.tbMaKH.Size = new System.Drawing.Size(160, 20);
-            this.tbMaKH.TabIndex = 4;
+            this.tbTenKH.Location = new System.Drawing.Point(78, 52);
+            this.tbTenKH.Name = "tbTenKH";
+            this.tbTenKH.Size = new System.Drawing.Size(160, 20);
+            this.tbTenKH.TabIndex = 4;
             // 
             // label3
             // 
@@ -434,18 +434,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbTenMay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbSDT;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbMaKH;
+        private System.Windows.Forms.TextBox tbTenKH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbMaDH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbSoTien;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbTTM;
         private System.Windows.Forms.DateTimePicker dateNLap;
         private System.Windows.Forms.TextBox tbKTS;
         private System.Windows.Forms.Label label2;
@@ -463,7 +463,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTenDV;
         private System.Windows.Forms.Label label11;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;

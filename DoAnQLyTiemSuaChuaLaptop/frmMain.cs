@@ -68,5 +68,29 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
             }
         }
+
+        private void btnDonHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControl1.TabPages.IndexOfKey("tabPageQLDONHANG");
+            if (index >= 0)
+            {
+                tabControl1.SelectedIndex = index;
+
+            }
+            else
+            {
+                frmDonhang f = new frmDonhang();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageQLDONHANG";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControl1.TabPages.Add(p);
+                f.Show();
+
+            }
+
+        }
     }
 }
