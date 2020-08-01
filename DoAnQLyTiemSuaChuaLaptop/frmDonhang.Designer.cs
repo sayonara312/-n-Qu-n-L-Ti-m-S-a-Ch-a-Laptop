@@ -418,6 +418,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDonhang";
             this.Text = "Quản Lý Đơn Hàng";
+            this.Load += new System.EventHandler(this.frmDonhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
