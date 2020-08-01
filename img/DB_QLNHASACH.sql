@@ -76,8 +76,8 @@ ADD	CONSTRAINT FK_DONHANG_NHANVIEN FOREIGN KEY(MaNV) REFERENCES NHANVIEN(MaNV),
 
 ALTER TABLE  CTHD
 ADD	CONSTRAINT FK_CTHD_KHACHHANG FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH),
-	 CONSTRAINT FK_CTHD_DONHANG FOREIGN KEY(MaDH) REFERENCES DONHANG(MaDH);
-
+	 CONSTRAINT FK_CTHD_DONHANG FOREIGN KEY(MaDH) REFERENCES DONHANG(MaDH),
+	 CONSTRAINT FK_CTHD_NHANVIEN FOREIGN KEY(MaNV) REFERENCES NHANVIEN(MaNV);
 
 
 
@@ -107,9 +107,9 @@ insert into DONHANG values('DH0005','KH0002', N'Lê Thị Trúc Anh','NV0003','0
 insert into DONHANG values('DH0006','KH0003', N'Phạm Thế Phong','NV0003','02/01/2017','Dell Inspiron 7577 Gaming','Dell',N'Hư MainBoard')
 
 --Insert table CTHD
-insert into CTHD values(1,'DH0001','NV0001', 'KH0001', 500000,'Dell Latitude E7480',N'Thay Loa',N'Bảo Hành',N'Đã Sửa')
-insert into CTHD values(2,'DH0002','NV0002', 'KH0001' , 400000,'Dell Latitude E7480',N'Thay Bàn Phím',N'Bảo Hành',N'Đã Sửa')
-insert into CTHD values(3,'DH0003','NV0001', 'KH0001' , 500000,'Dell Latitude E7480',N'Cài Driver Mạng',N'Bảo Hành',N'Đã Sửa')
-insert into CTHD values(4,'DH0004','NV0001', 'KH0002' , 1000000,'Acer ConceptD 7',N'Thay màn hình',N'Sửa Chữa',N'Đã Sửa')
-insert into CTHD values(5,'DH0005','KH0003', 'KH0002' , 0,'Acer ConceptD 7',N'Thay Ổ Cứng',N'Sửa Chữa',N'Đang Sửa')
-insert into CTHD values(6,'DH0006','NV0001', 'KH0003', 30000000,'Dell Inspiron 7577 Gaming',N'Thay MainBoard',N'Sửa Chữa',N'Đã Sửa')
+insert into CTHD values(1,'NV0001','DH0001', 'KH0001', 500000,'Dell Latitude E7480',N'Thay Loa',N'Bảo Hành',N'Đã Sửa')
+insert into CTHD values(2,'NV0002','DH0002', 'KH0001' , 400000,'Dell Latitude E7480',N'Thay Bàn Phím',N'Bảo Hành',N'Đã Sửa')
+insert into CTHD values(3,'NV0001','DH0003', 'KH0001' , 500000,'Dell Latitude E7480',N'Cài Driver Mạng',N'Bảo Hành',N'Đã Sửa')
+insert into CTHD values(4,'NV0001','DH0004', 'KH0002' , 1000000,'Acer ConceptD 7',N'Thay màn hình',N'Sửa Chữa',N'Đã Sửa')
+insert into CTHD values(5,'NV0003','DH0005', 'KH0002' , 0,'Acer ConceptD 7',N'Thay Ổ ACứng',N'Sửa Chữa',N'Đang Sửa')
+insert into CTHD values(6,'NV0001','DH0006', 'KH0003', 30000000,'Dell Inspiron 7577 Gaming',N'Thay MainBoard',N'Sửa Chữa',N'Đã Sửa')

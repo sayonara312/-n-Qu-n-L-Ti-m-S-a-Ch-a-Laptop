@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DoAnQLyTiemSuaChuaLaptop.Modules;
+
 namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmDonhang : Form
@@ -92,8 +93,13 @@ namespace DoAnQLyTiemSuaChuaLaptop
         private void frmDonhang_Load(object sender, EventArgs e)
         {
             tblDONHANG = new DataTable();
+            tblKHACHHANG = new DataTable();
+            tblNHANVIEN = new DataTable();
             tblCTHD = new DataTable();
-            daDH = new SqlDataAdapter("Select * from DONHANG", Modules.cnnStr);
+            daDH = new SqlDataAdapter("Select * from DONHANG",XLDONHANG.cnnStr);
+            daCTHD = new SqlDataAdapter("Select * from CTHD", XLCTHD.cnnStr);
+            daKH = new SqlDataAdapter("Select * from KHACHHANG", XLKHACHHANG.cnnStr);
+            daNV = new SqlDataAdapter("Select * from NHANVIEN", XLNHANVIEN.cnnStr);
             try
             {
                 daNV.Fill(tblNHANVIEN);
