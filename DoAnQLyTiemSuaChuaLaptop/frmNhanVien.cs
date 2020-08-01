@@ -56,7 +56,14 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
             
         }
-        
+        private void enablebutton()
+        {
+            btnThem.Enabled = !capnhat;
+            btnXoa.Enabled = capnhat;
+            btnLuu.Enabled = capnhat;
+            btnHuy.Enabled = capnhat;
+            dgvNhanVien.Enabled = capnhat;
+        }
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             tblNHANVIEN = new DataTable();
@@ -75,6 +82,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
             }
             loadNV();
             loadDSNV();
+            capnhat = false;
+            enablebutton();
 
             
         }
@@ -84,7 +93,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             raNu.Checked = !raNam.Checked;
         }
 
-        private void btnThem(object sender, EventArgs e)
+        private void btnThemNV(object sender, EventArgs e)
         {
             bindNV.AddNew();
            
@@ -97,6 +106,9 @@ namespace DoAnQLyTiemSuaChuaLaptop
                 bindNV.EndCurrentEdit();
                 daNV.Update(tblNHANVIEN);
                 tblNHANVIEN.AcceptChanges();
+                MessageBox.Show("Lưu thành công!!!");
+                capnhat = false;
+                enablebutton();
                 
             }
             catch(Exception ex)
@@ -109,6 +121,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             bindNV.CancelCurrentEdit();
             tblNHANVIEN.RejectChanges();
+            capnhat = false;
+            enablebutton();
             
         }
 
@@ -123,7 +137,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            
+            capnhat = true;
+            enablebutton();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -155,6 +170,13 @@ namespace DoAnQLyTiemSuaChuaLaptop
         private void raNam_CheckedChanged_1(object sender, EventArgs e)
         {
             raNu.Checked = !raNam.Checked;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            bindNV.AddNew();
+            capnhat = true;
+            enablebutton();
         }
     }
 }
