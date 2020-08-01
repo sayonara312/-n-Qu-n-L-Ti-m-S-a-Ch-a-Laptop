@@ -33,18 +33,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dgvDonHang = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TTMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbTenDV = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,6 +57,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TTMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -120,68 +120,6 @@
             this.dgvDonHang.Name = "dgvDonHang";
             this.dgvDonHang.Size = new System.Drawing.Size(1165, 173);
             this.dgvDonHang.TabIndex = 20;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 50;
-            // 
-            // MaDH
-            // 
-            this.MaDH.HeaderText = "Mã Đơn Hàng";
-            this.MaDH.Name = "MaDH";
-            this.MaDH.Width = 70;
-            // 
-            // TenKH
-            // 
-            this.TenKH.HeaderText = "Tên KH";
-            this.TenKH.Name = "TenKH";
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "SĐT KH";
-            this.SDT.Name = "SDT";
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.HeaderText = "Ngày Lập ";
-            this.NgayLap.Name = "NgayLap";
-            // 
-            // TenMay
-            // 
-            this.TenMay.HeaderText = "Tên Máy";
-            this.TenMay.Name = "TenMay";
-            // 
-            // TenNV
-            // 
-            this.TenNV.HeaderText = "Kỹ Thuật Sửa";
-            this.TenNV.Name = "TenNV";
-            // 
-            // TTMay
-            // 
-            this.TTMay.HeaderText = "Trình Trạng Máy";
-            this.TTMay.Name = "TTMay";
-            // 
-            // HinhThucSua
-            // 
-            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
-            this.HinhThucSua.Name = "HinhThucSua";
-            // 
-            // TenDV
-            // 
-            this.TenDV.HeaderText = "Tên Dịch Vụ";
-            this.TenDV.Name = "TenDV";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.Name = "TrangThai";
-            // 
-            // SoTien
-            // 
-            this.SoTien.HeaderText = "Số Tiền";
-            this.SoTien.Name = "SoTien";
             // 
             // groupBox1
             // 
@@ -241,6 +179,7 @@
             // 
             // cbTrangThai
             // 
+            this.cbTrangThai.ForeColor = System.Drawing.SystemColors.Window;
             this.cbTrangThai.FormattingEnabled = true;
             this.cbTrangThai.Location = new System.Drawing.Point(588, 26);
             this.cbTrangThai.Name = "cbTrangThai";
@@ -404,6 +343,79 @@
             this.simpleButton4.TabIndex = 26;
             this.simpleButton4.Text = "Lưu";
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // MaDH
+            // 
+            this.MaDH.DataPropertyName = "MaDH";
+            this.MaDH.HeaderText = "Mã Đơn Hàng";
+            this.MaDH.Name = "MaDH";
+            this.MaDH.Width = 70;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên KH";
+            this.TenKH.Name = "TenKH";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SoDT";
+            this.SDT.HeaderText = "SĐT KH";
+            this.SDT.Name = "SDT";
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.DataPropertyName = "NgayLap";
+            this.NgayLap.HeaderText = "Ngày Lập ";
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // TenMay
+            // 
+            this.TenMay.DataPropertyName = "TenMay";
+            this.TenMay.HeaderText = "Tên Máy";
+            this.TenMay.Name = "TenMay";
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Kỹ Thuật Sửa";
+            this.TenNV.Name = "TenNV";
+            // 
+            // TTMay
+            // 
+            this.TTMay.DataPropertyName = "TrinhTrangMay";
+            this.TTMay.HeaderText = "Trình Trạng Máy";
+            this.TTMay.Name = "TTMay";
+            // 
+            // HinhThucSua
+            // 
+            this.HinhThucSua.DataPropertyName = "HinhThucSua";
+            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
+            this.HinhThucSua.Name = "HinhThucSua";
+            // 
+            // TenDV
+            // 
+            this.TenDV.DataPropertyName = "TenDichVu";
+            this.TenDV.HeaderText = "Tên Dịch Vụ";
+            this.TenDV.Name = "TenDV";
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.Name = "TrangThai";
+            // 
+            // SoTien
+            // 
+            this.SoTien.DataPropertyName = "SoTien";
+            this.SoTien.HeaderText = "Số Tiền";
+            this.SoTien.Name = "SoTien";
+            // 
             // frmDonhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +463,11 @@
         private System.Windows.Forms.TextBox tbKTS;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTrangThai;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbTenDV;
+        private System.Windows.Forms.Label label11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
@@ -463,10 +480,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbTenDV;
-        private System.Windows.Forms.Label label11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }

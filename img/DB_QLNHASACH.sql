@@ -51,8 +51,9 @@ GO
 /****** Object:  Table CTHD ******/
 CREATE TABLE CTHD(
 	MaCTHD int NOT NULL,
+	MaNV varchar(10) NOT NULL,
 	MaDH varchar(10) NOT NULL,
-	MaKH varchar(10) NULL,
+	MaKH varchar(10) NOT NULL,
 	SoTien int NOT NULL,
 	TenMay varchar(100) NULL,
 	TenDichVu nvarchar(50) NULL,
@@ -98,17 +99,17 @@ insert into NHANVIEN values('NV0003', N'Nguyễn Kim Ngân', 0 ,N'Bình Dương'
 
 
 --Insert table DONHANG
-insert into DONHANG values('DH0001','KH0001', N'Nguyễn Mạnh Hưng','NV0001','5/9/2016','Dell Latitude E7480','Dell',N'Hư Loa')
-insert into DONHANG values('DH0002','KH0001', N'Nguyễn Mạnh Hưng','NV0001','5/9/2016','Dell Latitude E7480','Dell',N'Hư Bàn Phím')
-insert into DONHANG values('DH0003','KH0001', N'Nguyễn Mạnh Hưng','NV0001','5/9/2016','Dell Latitude E7480','Dell',N'Hư Wifi')
-insert into DONHANG values('DH0004','KH0002', N'Lê Thị Trúc Anh','NV0001','10/5/2017','Acer ConceptD 7','Acer',N'Hư màn hình')
-insert into DONHANG values('DH0005','KH0002', N'Lê Thị Trúc Anh','NV0003','8/4/2017','HP ENVY 13','HP',N'Hư Ổ Cứng')
-insert into DONHANG values('DH0006','KH0003', N'Phạm Thế Phong','NV0003','2/1/2017','Dell Inspiron 7577 Gaming','Dell',N'Hư MainBoard')
+insert into DONHANG values('DH0001','KH0001', N'Nguyễn Mạnh Hưng','NV0001','05/09/2016','Dell Latitude E7480','Dell',N'Hư Loa')
+insert into DONHANG values('DH0002','KH0001', N'Nguyễn Mạnh Hưng','NV0001','05/09/2016','Dell Latitude E7480','Dell',N'Hư Bàn Phím')
+insert into DONHANG values('DH0003','KH0001', N'Nguyễn Mạnh Hưng','NV0001','05/09/2016','Dell Latitude E7480','Dell',N'Hư Wifi')
+insert into DONHANG values('DH0004','KH0002', N'Lê Thị Trúc Anh','NV0001','10/05/2017','Acer ConceptD 7','Acer',N'Hư màn hình')
+insert into DONHANG values('DH0005','KH0002', N'Lê Thị Trúc Anh','NV0003','08/04/2017','HP ENVY 13','HP',N'Hư Ổ Cứng')
+insert into DONHANG values('DH0006','KH0003', N'Phạm Thế Phong','NV0003','02/01/2017','Dell Inspiron 7577 Gaming','Dell',N'Hư MainBoard')
 
 --Insert table CTHD
-insert into CTHD values(1,'DH0001', 'KH0001', 500000,'Dell Latitude E7480',N'Thay Loa',N'Bảo Hành',N'Đã Sửa')
-insert into CTHD values(2,'DH0002', 'KH0001' , 400000,'Dell Latitude E7480',N'Thay Bàn Phím',N'Bảo Hành',N'Đã Sửa')
-insert into CTHD values(3,'DH0003', 'KH0001' , 500000,'Dell Latitude E7480',N'Cài Driver Mạng',N'Bảo Hành',N'Đã Sửa')
-insert into CTHD values(4,'DH0004', 'KH0002' , 1000000,'Acer ConceptD 7',N'Thay màn hình',N'Sửa Chữa',N'Đã Sửa')
-insert into CTHD values(5,'DH0005', 'KH0002' , 0,'Acer ConceptD 7',N'Thay Ổ Cứng',N'Sửa Chữa',N'Đang Sửa')
-insert into CTHD values(6,'DH0006', 'KH0003', 30000000,'Dell Inspiron 7577 Gaming',N'Thay MainBoard',N'Sửa Chữa',N'Đã Sửa')
+insert into CTHD values(1,'DH0001','NV0001', 'KH0001', 500000,'Dell Latitude E7480',N'Thay Loa',N'Bảo Hành',N'Đã Sửa')
+insert into CTHD values(2,'DH0002','NV0002', 'KH0001' , 400000,'Dell Latitude E7480',N'Thay Bàn Phím',N'Bảo Hành',N'Đã Sửa')
+insert into CTHD values(3,'DH0003','NV0001', 'KH0001' , 500000,'Dell Latitude E7480',N'Cài Driver Mạng',N'Bảo Hành',N'Đã Sửa')
+insert into CTHD values(4,'DH0004','NV0001', 'KH0002' , 1000000,'Acer ConceptD 7',N'Thay màn hình',N'Sửa Chữa',N'Đã Sửa')
+insert into CTHD values(5,'DH0005','KH0003', 'KH0002' , 0,'Acer ConceptD 7',N'Thay Ổ Cứng',N'Sửa Chữa',N'Đang Sửa')
+insert into CTHD values(6,'DH0006','NV0001', 'KH0003', 30000000,'Dell Inspiron 7577 Gaming',N'Thay MainBoard',N'Sửa Chữa',N'Đã Sửa')
