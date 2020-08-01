@@ -212,6 +212,7 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Đơn Hàng";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tbTenDV
             // 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using DoAnQLyTiemSuaChuaLaptop.Modules;
 namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmDonhang : Form
@@ -48,11 +48,17 @@ namespace DoAnQLyTiemSuaChuaLaptop
             tblCTHD.Columns.Add(cot_HinhThucSua);
             tblCTHD.Columns.Add(cot_TrangThai);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void loadDONHANG()
         {
             tbMaDH.DataBindings.Add("text", tblDONHANG, "MaNV", true);
-            tbTenKH.DataBindings.Add("text", tblDONHANG, "TenNV", true);
-            dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLap", true);
+            tbTenKH.DataBindings.Add("text", tblDONHANG, "TenKH", true);
+            dateNLap.DataBindings.Add("Value", tblDONHANG, "NgayLap", true);
             tbTenMay.DataBindings.Add("text", tblDONHANG, "TenMay", true);
             tbTTM.DataBindings.Add("text", tblDONHANG, "TrinhTrangMay", true);
             bindDH = this.BindingContext[tblDONHANG];
@@ -70,7 +76,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             tblDONHANG = new DataTable();
             tblCTHD = new DataTable();
-            daDH = new SqlDataAdapter("Select * from DONHANG", Modules.cnnStr);
+            daDH = new SqlDataAdapter("Select * from DONHANG", XLBANG.cnnStr);
             try
             {
                 daDH.Fill(tblDONHANG);

@@ -107,7 +107,21 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules.cs" />
+    <Compile Include="Modules\XLCTHD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\XLBANG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\XLDONHANG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\XLKHACHHANG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\XLNHANVIEN.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmDonhang.cs">

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DoAnQLyTiemSuaChuaLaptop.Modules;
 namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmDoiMatKhau : Form
@@ -39,13 +39,13 @@ namespace DoAnQLyTiemSuaChuaLaptop
                 return;
             }
             frmMain f = (frmMain)this.Parent;
-            /*int count=Taa("Update NHANVIEN set Password ='"+ tbMKM.Text+"' where maNV ='"+ f.MaNV+"'");
+            int count=XLBANG.Thuc_hien_lenh("Update NHANVIEN set Password ='"+ tbMKM.Text+"' where maNV ='"+ f.maNV+"'");
             if (count > 0)
             {
                 MessageBox.Show("Đổi mật khẩu thành công!!!");
 
             }
-            else MessageBox.Show("Mật khẩu không hợp lệ!!!");*/
+            else MessageBox.Show("Mật khẩu không hợp lệ!!!");
         }
 
         private void tbMKM_TextChanged(object sender, EventArgs e)

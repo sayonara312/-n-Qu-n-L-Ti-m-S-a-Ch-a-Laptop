@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DoAnQLyTiemSuaChuaLaptop.Modules;
 namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmNhanVien : Form
@@ -68,7 +69,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             tblNHANVIEN = new DataTable();
             
-            daNV = new SqlDataAdapter("Select * from NHANVIEN", Modules.cnnStr);
+            daNV = new SqlDataAdapter("Select * from NHANVIEN", XLBANG.cnnStr);
             try
             {
                 daNV.Fill(tblNHANVIEN);
