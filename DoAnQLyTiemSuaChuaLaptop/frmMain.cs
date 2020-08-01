@@ -10,8 +10,10 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace DoAnQLyTiemSuaChuaLaptop
 {
+    
     public partial class frmMain : Form
     {
+        public string maNV;
         public frmMain()
         {
             InitializeComponent();
@@ -19,7 +21,10 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+            frmDangNhap f = new frmDangNhap(this);
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.WindowState = FormWindowState.Normal;
+            f.ShowDialog();
         }
 
         private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -91,6 +96,33 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
             }
 
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            tabControl1.TabPages.Clear();
+            frmMain_Load(sender, e);
+        }
+
+        private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControl1.TabPages.IndexOfKey("tabPageDoiMatKhau");
+            if (index >= 0)
+            {
+                tabControl1.SelectedIndex = index;
+            }
+            else
+            {
+                frmDoiMatKhau f = new frmDoiMatKhau();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageDoiMatKhau";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControl1.TabPages.Add(p);
+                f.Show();
+            }
         }
     }
 }
