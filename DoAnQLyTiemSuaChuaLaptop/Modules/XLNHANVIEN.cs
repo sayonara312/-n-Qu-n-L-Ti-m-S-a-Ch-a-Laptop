@@ -7,7 +7,7 @@ namespace DoAnQLyTiemSuaChuaLaptop.Modules
 {
     class XLNHANVIEN:XLBANG
     {
-        public XLNHANVIEN(): base("XLBANG") { }
+        public XLNHANVIEN(): base("NHANVIEN") { }
         public XLNHANVIEN(string pQuery) : base ("NHANVIEN",pQuery) { }
     }
 }

@@ -8,7 +8,7 @@ namespace DoAnQLyTiemSuaChuaLaptop.Modules
 {
     class XLCTHD: XLBANG
     {
-        public XLCTHD() : base("XLBANG") { }
+        public XLCTHD() : base("CTHD") { }
         public XLCTHD(string pQuery) : base("CTHD", pQuery) { }
     }
 }

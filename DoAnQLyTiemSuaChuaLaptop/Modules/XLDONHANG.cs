@@ -8,7 +8,7 @@ namespace DoAnQLyTiemSuaChuaLaptop.Modules
 {
     class XLDONHANG : XLBANG
     {
-        public XLDONHANG() : base("XLBANG") { }
+        public XLDONHANG() : base("DONHANG") { }
         public XLDONHANG(string pQuery) : base("DONHANG", pQuery) { }
     }
 }
