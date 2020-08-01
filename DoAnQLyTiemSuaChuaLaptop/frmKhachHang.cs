@@ -147,5 +147,10 @@ namespace DoAnQLyTiemSuaChuaLaptop
             if (e.KeyChar == (char)Keys.Enter)
                 btnTimKiem_Click(sender, e);
         }
+
+        private void raNu_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
