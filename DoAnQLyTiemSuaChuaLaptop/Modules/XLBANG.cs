@@ -42,9 +42,9 @@ namespace DoAnQLyTiemSuaChuaLaptop.Modules
             _query = pQuery;
             docBang();
         }
-        
+
         #region Methods
-        
+
         public void docBang()
         {
             if (_query == null)
@@ -64,6 +64,7 @@ namespace DoAnQLyTiemSuaChuaLaptop.Modules
                 throw ex;
             }
         }
+
         //Ghi du lieu
         public Boolean ghi()
         {

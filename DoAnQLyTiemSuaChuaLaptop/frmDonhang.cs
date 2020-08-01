@@ -65,8 +65,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
             ds.Relations.Add(qh);
             DataColumn cot_SoTien = new DataColumn("SoTien", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).SoTien");
             DataColumn cot_TenDichVu = new DataColumn("TenDichVu", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TenDichVu");
-            DataColumn cot_HinhThucSua = new DataColumn("HinhThucSua", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).HinhThucSua)");
-            DataColumn cot_TrangThai = new DataColumn("TrangThai", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TrangThai)");
+            DataColumn cot_HinhThucSua = new DataColumn("HinhThucSua", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).HinhThucSua");
+            DataColumn cot_TrangThai = new DataColumn("TrangThai", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TrangThai");
             tblCTHD.Columns.Add(cot_SoTien);
             tblCTHD.Columns.Add(cot_TenDichVu);
             tblCTHD.Columns.Add(cot_HinhThucSua);
