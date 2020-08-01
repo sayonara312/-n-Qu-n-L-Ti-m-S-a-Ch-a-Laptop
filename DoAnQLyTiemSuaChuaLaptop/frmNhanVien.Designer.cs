@@ -33,7 +33,16 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.raNu = new System.Windows.Forms.RadioButton();
+            this.raNam = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,22 +58,13 @@
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.tbTim = new System.Windows.Forms.TextBox();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raNam = new System.Windows.Forms.RadioButton();
-            this.raNu = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnXoa
             // 
-            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.Location = new System.Drawing.Point(558, 121);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(84, 36);
@@ -74,7 +74,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.Location = new System.Drawing.Point(558, 79);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(84, 36);
@@ -109,6 +109,53 @@
             this.dgvNhanVien.TabIndex = 20;
             this.dgvNhanVien.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvNhanVien_DataBindingComplete);
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên NV";
+            this.TenNV.Name = "TenNV";
+            this.TenNV.Width = 120;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.Name = "MaNV";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SoDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 70;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Width = 50;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.Width = 120;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 200;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.raNu);
@@ -131,6 +178,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nhân Viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // raNu
+            // 
+            this.raNu.AutoSize = true;
+            this.raNu.Location = new System.Drawing.Point(371, 26);
+            this.raNu.Name = "raNu";
+            this.raNu.Size = new System.Drawing.Size(39, 17);
+            this.raNu.TabIndex = 19;
+            this.raNu.TabStop = true;
+            this.raNu.Text = "Nữ";
+            this.raNu.UseVisualStyleBackColor = true;
+            // 
+            // raNam
+            // 
+            this.raNam.AutoSize = true;
+            this.raNam.Location = new System.Drawing.Point(318, 26);
+            this.raNam.Name = "raNam";
+            this.raNam.Size = new System.Drawing.Size(47, 17);
+            this.raNam.TabIndex = 18;
+            this.raNam.TabStop = true;
+            this.raNam.Text = "Nam";
+            this.raNam.UseVisualStyleBackColor = true;
+            this.raNam.CheckedChanged += new System.EventHandler(this.raNam_CheckedChanged_1);
             // 
             // label7
             // 
@@ -224,7 +294,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
             this.btnLuu.Location = new System.Drawing.Point(648, 31);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(84, 36);
@@ -234,7 +304,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
             this.btnHuy.Location = new System.Drawing.Point(648, 79);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(84, 36);
@@ -261,76 +331,6 @@
             this.tbTim.Text = "Tìm kiếm theo Mã NV...";
             this.tbTim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTim_KeyPress);
             this.tbTim.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbTim_MouseDown);
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 50;
-            // 
-            // TenNV
-            // 
-            this.TenNV.DataPropertyName = "TenNV";
-            this.TenNV.HeaderText = "Tên NV";
-            this.TenNV.Name = "TenNV";
-            this.TenNV.Width = 120;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã NV";
-            this.MaNV.Name = "MaNV";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SoDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 70;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Width = 50;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.Width = 120;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 200;
-            // 
-            // raNam
-            // 
-            this.raNam.AutoSize = true;
-            this.raNam.Location = new System.Drawing.Point(317, 27);
-            this.raNam.Name = "raNam";
-            this.raNam.Size = new System.Drawing.Size(47, 17);
-            this.raNam.TabIndex = 14;
-            this.raNam.TabStop = true;
-            this.raNam.Text = "Nam";
-            this.raNam.UseVisualStyleBackColor = true;
-            this.raNam.CheckedChanged += new System.EventHandler(this.raNam_CheckedChanged);
-            // 
-            // raNu
-            // 
-            this.raNu.AutoSize = true;
-            this.raNu.Location = new System.Drawing.Point(370, 27);
-            this.raNu.Name = "raNu";
-            this.raNu.Size = new System.Drawing.Size(39, 17);
-            this.raNu.TabIndex = 15;
-            this.raNu.TabStop = true;
-            this.raNu.Text = "Nữ";
-            this.raNu.UseVisualStyleBackColor = true;
             // 
             // frmNhanVien
             // 

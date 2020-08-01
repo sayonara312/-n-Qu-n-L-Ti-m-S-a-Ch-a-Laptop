@@ -15,12 +15,13 @@ CREATE TABLE NHANVIEN(
 	DiaChi nvarchar(100) NOT NULL,
 	SoDT varchar(12) NOT NULL,
 	Email varchar(50) NULL,
-	UserName nvarchar(30) NOT NULL,
-	Password nvarchar(30) NOT NULL,
+	UserName nvarchar(30) NULL,
+	Password nvarchar(30) NULL,
+
 
  CONSTRAINT PK_NHANVIEN PRIMARY KEY (MaNV)
 )
-GO
+
 
 /****** Object:  Table KHACHHANG   ******/
 CREATE TABLE KHACHHANG(

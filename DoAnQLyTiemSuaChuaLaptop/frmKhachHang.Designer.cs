@@ -185,6 +185,7 @@
             this.raNu.TabStop = true;
             this.raNu.Text = "Nữ";
             this.raNu.UseVisualStyleBackColor = true;
+            this.raNu.CheckedChanged += new System.EventHandler(this.raNu_CheckedChanged);
             // 
             // raNam
             // 
