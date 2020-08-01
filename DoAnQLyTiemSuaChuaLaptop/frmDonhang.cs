@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using DoAnQLyTiemSuaChuaLaptop.Modules;
 namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmDonhang : Form
@@ -62,20 +62,23 @@ namespace DoAnQLyTiemSuaChuaLaptop
             DataRelation qh1 = new DataRelation("FRK_KHACHHANG_CTHD", tblKHACHHANG.Columns["MaKH"], tblCTHD.Columns["MaKH"]);
             DataRelation qh2 = new DataRelation("FRK_NHANVIEN_CTHD", tblNHANVIEN.Columns["MaNV"], tblCTHD.Columns["MaNV"]);
             ds.Relations.Add(qh);
-            ds.Relations.Add(qh1);
-            ds.Relations.Add(qh2);
-
-            DataColumn cot_TenNV = new DataColumn("TenNV", Type.GetType("System.String"), "Parent (FRK_NHANVIEN_CTHD).TenNV");
-            DataColumn cot_SoDT = new DataColumn("SoDT", Type.GetType("System.String"), "Parent (FRK_KHACHHANG_CTHD).SoDT");
-            DataColumn cot_TenKH = new DataColumn("TenKH", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TenKH");
-            DataColumn cot_NgayLap = new DataColumn("NgayLap", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).NgayLap");
-            DataColumn cot_TrinhTrangMay = new DataColumn("TrinhTrangMay", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TrinhTrangMay");
-
-            tblCTHD.Columns.Add(cot_TenNV);
-            tblCTHD.Columns.Add(cot_SoDT);
-            tblCTHD.Columns.Add(cot_TenKH);
-            tblCTHD.Columns.Add(cot_NgayLap);
-            tblCTHD.Columns.Add(cot_TrinhTrangMay);
+            DataColumn cot_SoTien = new DataColumn("SoTien", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).SoTien");
+            DataColumn cot_TenDichVu = new DataColumn("TenDichVu", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TenDichVu");
+            DataColumn cot_HinhThucSua = new DataColumn("HinhThucSua", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).HinhThucSua)");
+            DataColumn cot_TrangThai = new DataColumn("TrangThai", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TrangThai)");
+            tblCTHD.Columns.Add(cot_SoTien);
+            tblCTHD.Columns.Add(cot_TenDichVu);
+            tblCTHD.Columns.Add(cot_HinhThucSua);
+            tblCTHD.Columns.Add(cot_TrangThai);
+        }
+        private void loadDONHANG()
+        {
+            tbMaDH.DataBindings.Add("text", tblDONHANG, "MaNV", true);
+            tbTenKH.DataBindings.Add("text", tblDONHANG, "TenNV", true);
+            dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLap", true);
+            tbTenMay.DataBindings.Add("text", tblDONHANG, "TenMay", true);
+            tbTTM.DataBindings.Add("text", tblDONHANG, "TrinhTrangMay", true);
+            bindDH = this.BindingContext[tblDONHANG];
         }
 
         private void loadCTDB()
@@ -90,12 +93,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             tblDONHANG = new DataTable();
             tblCTHD = new DataTable();
-            tblKHACHHANG = new DataTable();
-            tblNHANVIEN = new DataTable();
             daDH = new SqlDataAdapter("Select * from DONHANG", Modules.cnnStr);
-            daCTHD = new SqlDataAdapter("Select * from CTHD", Modules.cnnStr);
-            daKH = new SqlDataAdapter("Select * from KHACHHANG", Modules.cnnStr);
-            daNV = new SqlDataAdapter("Select * from NHANVIEN", Modules.cnnStr);
             try
             {
                 daNV.Fill(tblNHANVIEN);
