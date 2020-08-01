@@ -18,8 +18,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
             InitializeComponent();
         }
         DataTable tblDONHANG,tblCTHD;
-        SqlDataAdapter daDH;
-        BindingManagerBase bindDH;
+        SqlDataAdapter daDH,daCTHD;
+        BindingManagerBase bindDH,bindCTHD;
         private void dgvDonHang_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow r in dgvDonHang.Rows)
@@ -32,6 +32,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             
         }
         bool capnhat;
+
         private void addColCTHD()
         {
             DataSet ds = new DataSet();
@@ -51,18 +52,18 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             tbMaDH.DataBindings.Add("text", tblDONHANG, "MaNV", true);
             tbTenKH.DataBindings.Add("text", tblDONHANG, "TenNV", true);
-            dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLa", true);
+            dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLap", true);
             tbTenMay.DataBindings.Add("text", tblDONHANG, "TenMay", true);
             tbTTM.DataBindings.Add("text", tblDONHANG, "TrinhTrangMay", true);
             bindDH = this.BindingContext[tblDONHANG];
         }
 
-        private void loadKH()
-        {
-            bindDH = this.BindingContext[tblDONHANG];
-            dgvDonHang.AutoGenerateColumns = false;
-            dgvDonHang.DataSource = tblDONHANG;
 
+        private void loadCTDH()
+        {
+            bindCTHD = this.BindingContext[tblCTHD];
+            dgvDonHang.AutoGenerateColumns = false;
+            dgvDonHang.DataSource = tblCTHD;
         }
 
         private void frmDonhang_Load(object sender, EventArgs e)
