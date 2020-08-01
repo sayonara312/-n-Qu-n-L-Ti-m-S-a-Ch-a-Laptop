@@ -33,8 +33,17 @@ namespace DoAnQLyTiemSuaChuaLaptop
         private void btnThem_Click(object sender, EventArgs e)
         {
             bindKH.AddNew();
+            capnhat = true;
+            enablebutton();
         }
-
+        private void enablebutton()
+        {
+            btnThem.Enabled = !capnhat;
+            btnXoa.Enabled = capnhat;
+            btnLuu.Enabled = capnhat;
+            btnHuy.Enabled = capnhat;
+            dgvKhachHang.Enabled = capnhat;
+        }
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             tblKHACHHANG = new DataTable();
@@ -53,6 +62,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
             }
             loadKH();
             loadDSKH();
+            capnhat = false;
+            enablebutton();
         }
 
         private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,6 +112,9 @@ namespace DoAnQLyTiemSuaChuaLaptop
                 bindKH.EndCurrentEdit();
                 daKH.Update(tblKHACHHANG);
                 tblKHACHHANG.AcceptChanges();
+                MessageBox.Show("Lưu thành công!!!");
+                capnhat = false;
+                enablebutton();
 
             }
             catch (Exception ex)
@@ -111,13 +125,16 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            capnhat = true;
+            enablebutton();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             bindKH.CancelCurrentEdit();
             tblKHACHHANG.RejectChanges();
+            capnhat = false;
+            enablebutton();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
