@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbDSNV = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnTinhLuong = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.numSoGio = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.dateNCCong = new System.Windows.Forms.DateTimePicker();
-            this.btnTinhLuong = new DevExpress.XtraEditors.SimpleButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbDSNV = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvNgayCC = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,14 +78,41 @@
             this.groupBox1.Text = "Thông Tin Chấm Công";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // lbDSNV
+            // 
+            this.lbDSNV.FormattingEnabled = true;
+            this.lbDSNV.Location = new System.Drawing.Point(296, 54);
+            this.lbDSNV.Name = "lbDSNV";
+            this.lbDSNV.Size = new System.Drawing.Size(168, 121);
+            this.lbDSNV.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(293, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Danh Sách Nhân Viên";
+            // 
+            // btnTinhLuong
+            // 
+            this.btnTinhLuong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTinhLuong.ImageOptions.Image")));
+            this.btnTinhLuong.Location = new System.Drawing.Point(137, 118);
+            this.btnTinhLuong.Name = "btnTinhLuong";
+            this.btnTinhLuong.Size = new System.Drawing.Size(102, 61);
+            this.btnTinhLuong.TabIndex = 5;
+            this.btnTinhLuong.Text = "Tính Lương";
+            // 
             // btnThem
             // 
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.Location = new System.Drawing.Point(26, 118);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(102, 61);
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // numSoGio
             // 
@@ -112,32 +139,6 @@
             this.dateNCCong.TabIndex = 1;
             this.dateNCCong.ValueChanged += new System.EventHandler(this.dateNCCong_ValueChanged);
             // 
-            // btnTinhLuong
-            // 
-            this.btnTinhLuong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnTinhLuong.Location = new System.Drawing.Point(137, 118);
-            this.btnTinhLuong.Name = "btnTinhLuong";
-            this.btnTinhLuong.Size = new System.Drawing.Size(102, 61);
-            this.btnTinhLuong.TabIndex = 5;
-            this.btnTinhLuong.Text = "Tính Lương";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(293, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Danh Sách Nhân Viên";
-            // 
-            // lbDSNV
-            // 
-            this.lbDSNV.FormattingEnabled = true;
-            this.lbDSNV.Location = new System.Drawing.Point(296, 54);
-            this.lbDSNV.Name = "lbDSNV";
-            this.lbDSNV.Size = new System.Drawing.Size(168, 121);
-            this.lbDSNV.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -161,6 +162,7 @@
             this.dgvNgayCC.Name = "dgvNgayCC";
             this.dgvNgayCC.Size = new System.Drawing.Size(544, 156);
             this.dgvNgayCC.TabIndex = 3;
+            this.dgvNgayCC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNgayCC_CellContentClick);
             this.dgvNgayCC.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvNgayCC_DataBindingComplete);
             // 
             // STT

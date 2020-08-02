@@ -95,6 +95,8 @@ namespace DoAnQLyTiemSuaChuaLaptop.Modules
                 throw ex;
             }
         }
+
+
         //Thực hiện câu truy vấn cập nhật dữ liệu (Insert, Update, Delete)
         public static int Thuc_hien_lenh(String pQuery)
         {
