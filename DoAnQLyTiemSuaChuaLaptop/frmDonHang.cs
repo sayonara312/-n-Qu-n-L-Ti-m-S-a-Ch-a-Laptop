@@ -47,7 +47,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
         }
         private void bdHD_PositionChanged(object sender, EventArgs e)
         {
-            tblCTHD.DefaultView.RowFilter = "MaDH='" + tbMaDH.Text + "'";
+            tblCTHD.DefaultView.RowFilter = "MaDH='" + tbMaDH.Text + "'" ;
+            
             int s = 0;
             foreach (DataRowView r in tblCTHD.DefaultView)
             {
@@ -82,10 +83,12 @@ namespace DoAnQLyTiemSuaChuaLaptop
         }
         private void loadCTHD()
         {
+
             tbTTM.DataBindings.Add("text", tblCTHD, "TrinhTrangMay", true);
             tbTenDichVu.DataBindings.Add("text", tblCTHD, "TenDichVu", true);
             tbTrangThai.DataBindings.Add("text", tblCTHD, "TrangThai", true);
             tbHinhThucSua.DataBindings.Add("text", tblCTHD, "HinhThucSua", true);
+
             bindCTHD = this.BindingContext[tblCTHD];
             dgvCTHD.AutoGenerateColumns = false;
             dgvCTHD.DataSource = tblCTHD;
@@ -93,6 +96,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
         }
         private void loadDONHANG()
         {
+            
+
             tbMaDH.DataBindings.Add("text", tblDONHANG, "MaDH", true);
             dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLap", true);
             cbSDT.DataBindings.Add("SelectedValue", tblDONHANG, "MaKH", true);
@@ -100,7 +105,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             tbLoaiMay.DataBindings.Add("text", tblDONHANG, "LoaiMay", true);
             bindDH = this.BindingContext[tblDONHANG];
             bindDH.PositionChanged += new EventHandler(bdHD_PositionChanged);
-            
+
         }
         private void enableButton()
         {

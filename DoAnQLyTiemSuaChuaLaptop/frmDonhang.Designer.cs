@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDonHang));
             this.gbDonHang = new System.Windows.Forms.GroupBox();
             this.btnLast = new DevExpress.XtraEditors.SimpleButton();
             this.btnNext = new DevExpress.XtraEditors.SimpleButton();
@@ -55,6 +57,13 @@
             this.tbMaDH = new System.Windows.Forms.TextBox();
             this.gbCTHD = new System.Windows.Forms.GroupBox();
             this.dgvCTHD = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrinhTrangMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDeleteCTHD = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.label13 = new System.Windows.Forms.Label();
@@ -69,16 +78,11 @@
             this.tbTien = new System.Windows.Forms.TextBox();
             this.cbNV = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrinhTrangMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdHD = new System.Windows.Forms.BindingSource(this.components);
             this.gbDonHang.SuspendLayout();
             this.gbCTHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdHD)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDonHang
@@ -116,35 +120,37 @@
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(275, 174);
+            this.btnLast.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.ImageOptions.Image")));
+            this.btnLast.Location = new System.Drawing.Point(167, 174);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(78, 45);
+            this.btnLast.Size = new System.Drawing.Size(42, 45);
             this.btnLast.TabIndex = 34;
-            this.btnLast.Text = "New";
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(191, 174);
+            this.btnNext.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.ImageOptions.Image")));
+            this.btnNext.Location = new System.Drawing.Point(122, 174);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(78, 45);
+            this.btnNext.Size = new System.Drawing.Size(39, 45);
             this.btnNext.TabIndex = 33;
-            this.btnNext.Text = "New";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(107, 174);
+            this.btnPrevious.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.ImageOptions.Image")));
+            this.btnPrevious.Location = new System.Drawing.Point(75, 174);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(78, 45);
+            this.btnPrevious.Size = new System.Drawing.Size(41, 45);
             this.btnPrevious.TabIndex = 32;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnFirst
             // 
+            this.btnFirst.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.ImageOptions.Image")));
             this.btnFirst.Location = new System.Drawing.Point(23, 174);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(78, 45);
+            this.btnFirst.Size = new System.Drawing.Size(46, 45);
             this.btnFirst.TabIndex = 31;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
@@ -362,6 +368,48 @@
             this.dgvCTHD.TabIndex = 46;
             this.dgvCTHD.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCTHD_DataBindingComplete);
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "TenNV";
+            this.MaNV.HeaderText = "Tên Kỹ Thuật Sửa";
+            this.MaNV.Name = "MaNV";
+            // 
+            // TrinhTrangMay
+            // 
+            this.TrinhTrangMay.DataPropertyName = "TrinhTrangMay";
+            this.TrinhTrangMay.HeaderText = "Trình Trạng Máy";
+            this.TrinhTrangMay.Name = "TrinhTrangMay";
+            // 
+            // TenDichVu
+            // 
+            this.TenDichVu.DataPropertyName = "TenDichVu";
+            this.TenDichVu.HeaderText = "Tên Dịch Vụ";
+            this.TenDichVu.Name = "TenDichVu";
+            // 
+            // HinhThucSua
+            // 
+            this.HinhThucSua.DataPropertyName = "HinhThucSua";
+            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
+            this.HinhThucSua.Name = "HinhThucSua";
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trang Thái";
+            this.TrangThai.Name = "TrangThai";
+            // 
+            // SoTien
+            // 
+            this.SoTien.DataPropertyName = "SoTien";
+            this.SoTien.HeaderText = "Số Tiền";
+            this.SoTien.Name = "SoTien";
+            // 
             // btnDeleteCTHD
             // 
             this.btnDeleteCTHD.Location = new System.Drawing.Point(933, 32);
@@ -479,47 +527,9 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Tên Kỹ Thuật Sữa";
             // 
-            // STT
+            // bdHD
             // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "TenNV";
-            this.MaNV.HeaderText = "Tên Kỹ Thuật Sửa";
-            this.MaNV.Name = "MaNV";
-            // 
-            // TrinhTrangMay
-            // 
-            this.TrinhTrangMay.DataPropertyName = "TrinhTrangMay";
-            this.TrinhTrangMay.HeaderText = "Trình Trạng Máy";
-            this.TrinhTrangMay.Name = "TrinhTrangMay";
-            // 
-            // TenDichVu
-            // 
-            this.TenDichVu.DataPropertyName = "TenDichVu";
-            this.TenDichVu.HeaderText = "Tên Dịch Vụ";
-            this.TenDichVu.Name = "TenDichVu";
-            // 
-            // HinhThucSua
-            // 
-            this.HinhThucSua.DataPropertyName = "HinhThucSua";
-            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
-            this.HinhThucSua.Name = "HinhThucSua";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trang Thái";
-            this.TrangThai.Name = "TrangThai";
-            // 
-            // SoTien
-            // 
-            this.SoTien.DataPropertyName = "SoTien";
-            this.SoTien.HeaderText = "Số Tiền";
-            this.SoTien.Name = "SoTien";
+            this.bdHD.PositionChanged += new System.EventHandler(this.bdHD_PositionChanged);
             // 
             // frmDonHang
             // 
@@ -536,6 +546,7 @@
             this.gbCTHD.ResumeLayout(false);
             this.gbCTHD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdHD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,5 +601,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhThucSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
+        private System.Windows.Forms.BindingSource bdHD;
     }
 }
