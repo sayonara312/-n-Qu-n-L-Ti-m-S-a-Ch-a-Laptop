@@ -103,6 +103,7 @@
             this.btnTinhLuong.Size = new System.Drawing.Size(102, 61);
             this.btnTinhLuong.TabIndex = 5;
             this.btnTinhLuong.Text = "Tính Lương";
+            this.btnTinhLuong.Click += new System.EventHandler(this.btnTinhLuong_Click);
             // 
             // btnThem
             // 
