@@ -218,7 +218,6 @@ namespace DoAnQLyTiemSuaChuaLaptop
             }
             DataRow r = tblCTHD.NewRow();
             r["MaNV"] = cbNV.SelectedValue;
-            r["MaDH"] = tbMaDH.Text;
             r["SoTien"] = tbTien.Text;
             r["TrinhTrangMay"] = tbTTM.Text;
             r["TenDichVu"] = tbTenDichVu.Text;

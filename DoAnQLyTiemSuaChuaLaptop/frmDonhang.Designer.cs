@@ -55,14 +55,6 @@
             this.tbMaDH = new System.Windows.Forms.TextBox();
             this.gbCTHD = new System.Windows.Forms.GroupBox();
             this.dgvCTHD = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrinhTrangMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDeleteCTHD = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.label13 = new System.Windows.Forms.Label();
@@ -77,6 +69,13 @@
             this.tbTien = new System.Windows.Forms.TextBox();
             this.cbNV = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrinhTrangMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhThucSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDonHang.SuspendLayout();
             this.gbCTHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
@@ -351,7 +350,6 @@
             this.dgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCTHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.MaDH,
             this.MaNV,
             this.TrinhTrangMay,
             this.TenDichVu,
@@ -363,54 +361,6 @@
             this.dgvCTHD.Size = new System.Drawing.Size(895, 175);
             this.dgvCTHD.TabIndex = 46;
             this.dgvCTHD.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCTHD_DataBindingComplete);
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MaDH
-            // 
-            this.MaDH.DataPropertyName = "MaDH";
-            this.MaDH.HeaderText = "Mã Đơn Hàng";
-            this.MaDH.Name = "MaDH";
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "TenNV";
-            this.MaNV.HeaderText = "Tên Kỹ Thuật Sửa";
-            this.MaNV.Name = "MaNV";
-            // 
-            // TrinhTrangMay
-            // 
-            this.TrinhTrangMay.DataPropertyName = "TrinhTrangMay";
-            this.TrinhTrangMay.HeaderText = "Trình Trạng Máy";
-            this.TrinhTrangMay.Name = "TrinhTrangMay";
-            // 
-            // TenDichVu
-            // 
-            this.TenDichVu.DataPropertyName = "TenDichVu";
-            this.TenDichVu.HeaderText = "Tên Dịch Vụ";
-            this.TenDichVu.Name = "TenDichVu";
-            // 
-            // HinhThucSua
-            // 
-            this.HinhThucSua.DataPropertyName = "HinhThucSua";
-            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
-            this.HinhThucSua.Name = "HinhThucSua";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trang Thái";
-            this.TrangThai.Name = "TrangThai";
-            // 
-            // SoTien
-            // 
-            this.SoTien.DataPropertyName = "SoTien";
-            this.SoTien.HeaderText = "Số Tiền";
-            this.SoTien.Name = "SoTien";
             // 
             // btnDeleteCTHD
             // 
@@ -529,6 +479,48 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Tên Kỹ Thuật Sữa";
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "TenNV";
+            this.MaNV.HeaderText = "Tên Kỹ Thuật Sửa";
+            this.MaNV.Name = "MaNV";
+            // 
+            // TrinhTrangMay
+            // 
+            this.TrinhTrangMay.DataPropertyName = "TrinhTrangMay";
+            this.TrinhTrangMay.HeaderText = "Trình Trạng Máy";
+            this.TrinhTrangMay.Name = "TrinhTrangMay";
+            // 
+            // TenDichVu
+            // 
+            this.TenDichVu.DataPropertyName = "TenDichVu";
+            this.TenDichVu.HeaderText = "Tên Dịch Vụ";
+            this.TenDichVu.Name = "TenDichVu";
+            // 
+            // HinhThucSua
+            // 
+            this.HinhThucSua.DataPropertyName = "HinhThucSua";
+            this.HinhThucSua.HeaderText = "Hình Thức Sửa";
+            this.HinhThucSua.Name = "HinhThucSua";
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trang Thái";
+            this.TrangThai.Name = "TrangThai";
+            // 
+            // SoTien
+            // 
+            this.SoTien.DataPropertyName = "SoTien";
+            this.SoTien.HeaderText = "Số Tiền";
+            this.SoTien.Name = "SoTien";
+            // 
             // frmDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,7 +584,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDeleteCTHD;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrinhTrangMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu;

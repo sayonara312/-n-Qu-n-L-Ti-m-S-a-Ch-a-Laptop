@@ -118,3 +118,35 @@ insert into CTHD values('NV0001','DH0003',500000,N'Không kết nối mạng',N'
 insert into CTHD values('NV0001','DH0004',1000000,N'Màn Hình Nứt',N'Thay màn hình',N'Sửa Chữa',N'Đã Sửa')
 insert into CTHD values('NV0003','DH0004',0,N'Hiện lỗi not found disk',N'Thay Ổ Cứng',N'Sửa Chữa',N'Đang Sửa')
 insert into CTHD values('NV0002','DH0003',30000000,N'Máy mở rùi tự tắt',N'Thay MainBoard',N'Sửa Chữa',N'Đã Sửa')
+
+-- Xây dựng hàm phát sinh mã đơn hàng có dạng "DH0001" theo thứ tự tăng dần
+create function fn_CreateMaDH()
+	returns nvarchar(10)
+begin
+		
+		declare @MaDHOld varchar(10), @MaDHNew nvarchar(10)
+		select Top 1 @MaDHOld=MaDH from DONHANG order by MaDH Desc
+		Return 'DH' + format(right(@MaDHOld,4)+1,'#000#')
+end
+Go
+
+select dbo.fn_CreateMaDH()
+
+
+-- Xây dựng store phát sinh mã đơn hàng có dạng "HD0001" theo thứ tự tăng dần
+Go
+Create procedure proc_CreateMaDH
+	@MaDHNew nvarchar(10) output
+as
+		
+		declare @MaDHOld varchar(10)
+		select Top 1 @MaDHOld=MaDH from DONHANG order by MaDH Desc
+		set @MaDHNew = 'DH' + format(right(@MaDHOld,4)+1,'#000#')
+Go
+
+Declare @MaDH nvarchar(10) 
+Exec dbo.proc_CreateMaDH @MaDH output
+print @MaDH
+
+--drop function fn_CreateMaDH;
+--drop procedure proc_CreateMaDH;
