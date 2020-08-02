@@ -32,6 +32,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
                 daNV.Fill(tblNHANVIEN);
                 daCC.Fill(tblCHAMCONG);
                 SqlCommandBuilder cmdCC = new SqlCommandBuilder(daCC);
+                SqlCommandBuilder cmdNV = new SqlCommandBuilder(daNV);
 
             }
             catch(SqlException ex)
@@ -45,16 +46,15 @@ namespace DoAnQLyTiemSuaChuaLaptop
         private void loadDSCC()
         {
             
-            lbDSNV.DataBindings.Add("text", tblNHANVIEN, "TenNV", true);
-
+            lbDSNV.DataBindings.Add("value", tblNHANVIEN, "TenNV", true);
             bindNV = this.BindingContext[tblNHANVIEN];
-            bindCC = this.BindingContext[tblCHAMCONG];
+            
 
         }
         private void addcolNV()
         {
             DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblNHANVIEN,tblCHAMCONG});
+            ds.Tables.AddRange(new DataTable[] { tblCHAMCONG, tblNHANVIEN});
 
             DataRelation qh = new DataRelation("FRK_NHANVIEN_CHAMCONG", tblNHANVIEN.Columns["MaNV"], tblCHAMCONG.Columns["MaNV"]);
             ds.Relations.Add(qh);
