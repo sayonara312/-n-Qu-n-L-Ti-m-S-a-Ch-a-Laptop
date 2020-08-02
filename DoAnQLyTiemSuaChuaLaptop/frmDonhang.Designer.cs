@@ -79,6 +79,7 @@
             this.cbNV = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.bdHD = new System.Windows.Forms.BindingSource(this.components);
+            this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             this.gbDonHang.SuspendLayout();
             this.gbCTHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
@@ -87,6 +88,7 @@
             // 
             // gbDonHang
             // 
+            this.gbDonHang.Controls.Add(this.btnIn);
             this.gbDonHang.Controls.Add(this.btnLast);
             this.gbDonHang.Controls.Add(this.btnNext);
             this.gbDonHang.Controls.Add(this.btnPrevious);
@@ -190,33 +192,37 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
             this.btnUpdate.Location = new System.Drawing.Point(661, 72);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(78, 45);
             this.btnUpdate.TabIndex = 26;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Sửa";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.Location = new System.Drawing.Point(765, 70);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(78, 45);
             this.btnDelete.TabIndex = 25;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Xóa";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.Location = new System.Drawing.Point(661, 123);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(78, 45);
             this.btnSave.TabIndex = 24;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
             // 
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Location = new System.Drawing.Point(765, 123);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(78, 45);
@@ -226,20 +232,22 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.Location = new System.Drawing.Point(765, 19);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(78, 45);
             this.btnCancel.TabIndex = 22;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnNew
             // 
+            this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
             this.btnNew.Location = new System.Drawing.Point(661, 19);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(78, 45);
             this.btnNew.TabIndex = 21;
-            this.btnNew.Text = "New";
+            this.btnNew.Text = "Thêm";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // tbDiaChi
@@ -412,20 +420,22 @@
             // 
             // btnDeleteCTHD
             // 
+            this.btnDeleteCTHD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCTHD.ImageOptions.Image")));
             this.btnDeleteCTHD.Location = new System.Drawing.Point(933, 32);
             this.btnDeleteCTHD.Name = "btnDeleteCTHD";
             this.btnDeleteCTHD.Size = new System.Drawing.Size(78, 45);
             this.btnDeleteCTHD.TabIndex = 45;
-            this.btnDeleteCTHD.Text = "Delete";
+            this.btnDeleteCTHD.Text = "Xóa";
             this.btnDeleteCTHD.Click += new System.EventHandler(this.btnDeleteCTHD_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.Location = new System.Drawing.Point(830, 31);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(78, 45);
             this.btnAdd.TabIndex = 44;
-            this.btnAdd.Text = "New";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label13
@@ -525,11 +535,21 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 13);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Tên Kỹ Thuật Sữa";
+            this.label8.Text = "Tên Kỹ Thuật Sửa";
             // 
             // bdHD
             // 
             this.bdHD.PositionChanged += new System.EventHandler(this.bdHD_PositionChanged);
+            // 
+            // btnIn
+            // 
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnIn.Location = new System.Drawing.Point(661, 174);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(78, 45);
+            this.btnIn.TabIndex = 35;
+            this.btnIn.Text = "In HĐ";
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // frmDonHang
             // 
@@ -539,7 +559,7 @@
             this.Controls.Add(this.gbCTHD);
             this.Controls.Add(this.gbDonHang);
             this.Name = "frmDonHang";
-            this.Text = "frmDonHang";
+            this.Text = "Quản Lý Đơn Hàng";
             this.Load += new System.EventHandler(this.frmDonHang_Load);
             this.gbDonHang.ResumeLayout(false);
             this.gbDonHang.PerformLayout();
@@ -602,5 +622,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
         private System.Windows.Forms.BindingSource bdHD;
+        private DevExpress.XtraEditors.SimpleButton btnIn;
     }
 }

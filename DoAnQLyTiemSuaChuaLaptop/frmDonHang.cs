@@ -104,6 +104,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             tbTenMay.DataBindings.Add("text", tblDONHANG, "TenMay", true);
             tbLoaiMay.DataBindings.Add("text", tblDONHANG, "LoaiMay", true);
             bindDH = this.BindingContext[tblDONHANG];
+
             bindDH.PositionChanged += new EventHandler(bdHD_PositionChanged);
 
         }
@@ -145,14 +146,15 @@ namespace DoAnQLyTiemSuaChuaLaptop
             {
                 MessageBox.Show(ex.ToString());
             }
-            loadKH();
-            loadDONHANG();
-            loadCTHD();
+            loadKH();  
             loadNHANVIEN();
             addColCTHD();
+            loadDONHANG();
+            loadCTHD();
+            bdHD_PositionChanged(sender, e);
             capnhat = false;
             enableButton();
-            bdHD_PositionChanged(sender, e);
+            
         }
 
         BindingManagerBase bindDH, bindCTHD, bindKH, bindNV;
@@ -164,7 +166,9 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            TabPage p = (TabPage)this.Parent;
+            TabControl tabmain = (TabControl)p.Parent;
+            tabmain.TabPages.Remove(p);
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -275,6 +279,18 @@ namespace DoAnQLyTiemSuaChuaLaptop
             {
                 bindCTHD.RemoveAt(index);
             }
+        }
+
+        private void bdHD_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            frmInHDDH f = new frmInHDDH();
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
