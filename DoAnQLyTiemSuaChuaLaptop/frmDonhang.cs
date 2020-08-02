@@ -47,7 +47,8 @@ namespace DoAnQLyTiemSuaChuaLaptop
         }
         private void bdHD_PositionChanged(object sender, EventArgs e)
         {
-            tblCTHD.DefaultView.RowFilter = "MaDH='" + tbMaDH.Text + "'";
+            tblCTHD.DefaultView.RowFilter = "MaDH='" + tbMaDH.Text + "'" ;
+            
             int s = 0;
             foreach (DataRowView r in tblCTHD.DefaultView)
             {
@@ -82,10 +83,12 @@ namespace DoAnQLyTiemSuaChuaLaptop
         }
         private void loadCTHD()
         {
+
             tbTTM.DataBindings.Add("text", tblCTHD, "TrinhTrangMay", true);
             tbTenDichVu.DataBindings.Add("text", tblCTHD, "TenDichVu", true);
             tbTrangThai.DataBindings.Add("text", tblCTHD, "TrangThai", true);
             tbHinhThucSua.DataBindings.Add("text", tblCTHD, "HinhThucSua", true);
+
             bindCTHD = this.BindingContext[tblCTHD];
             dgvCTHD.AutoGenerateColumns = false;
             dgvCTHD.DataSource = tblCTHD;
@@ -93,14 +96,17 @@ namespace DoAnQLyTiemSuaChuaLaptop
         }
         private void loadDONHANG()
         {
+            
+
             tbMaDH.DataBindings.Add("text", tblDONHANG, "MaDH", true);
             dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLap", true);
             cbSDT.DataBindings.Add("SelectedValue", tblDONHANG, "MaKH", true);
             tbTenMay.DataBindings.Add("text", tblDONHANG, "TenMay", true);
             tbLoaiMay.DataBindings.Add("text", tblDONHANG, "LoaiMay", true);
             bindDH = this.BindingContext[tblDONHANG];
+
             bindDH.PositionChanged += new EventHandler(bdHD_PositionChanged);
-            
+
         }
         private void enableButton()
         {
@@ -140,14 +146,15 @@ namespace DoAnQLyTiemSuaChuaLaptop
             {
                 MessageBox.Show(ex.ToString());
             }
-            loadKH();
-            loadDONHANG();
-            loadCTHD();
+            loadKH();  
             loadNHANVIEN();
             addColCTHD();
+            loadDONHANG();
+            loadCTHD();
+            bdHD_PositionChanged(sender, e);
             capnhat = false;
             enableButton();
-            bdHD_PositionChanged(sender, e);
+            
         }
 
         BindingManagerBase bindDH, bindCTHD, bindKH, bindNV;
@@ -159,7 +166,9 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            TabPage p = (TabPage)this.Parent;
+            TabControl tabmain = (TabControl)p.Parent;
+            tabmain.TabPages.Remove(p);
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -214,7 +223,6 @@ namespace DoAnQLyTiemSuaChuaLaptop
             {
                 MessageBox.Show("Kỹ thuật viên đã nhận công việc, chọn nhân viên khác");
                 return;
-
             }
             DataRow r = tblCTHD.NewRow();
             r["MaNV"] = cbNV.SelectedValue;
@@ -271,6 +279,18 @@ namespace DoAnQLyTiemSuaChuaLaptop
             {
                 bindCTHD.RemoveAt(index);
             }
+        }
+
+        private void bdHD_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            frmInHDDH f = new frmInHDDH();
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
