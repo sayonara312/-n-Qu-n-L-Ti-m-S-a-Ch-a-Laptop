@@ -364,7 +364,7 @@
             this.SoTien});
             this.dgvCTHD.Location = new System.Drawing.Point(41, 102);
             this.dgvCTHD.Name = "dgvCTHD";
-            this.dgvCTHD.Size = new System.Drawing.Size(895, 175);
+            this.dgvCTHD.Size = new System.Drawing.Size(751, 175);
             this.dgvCTHD.TabIndex = 46;
             this.dgvCTHD.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCTHD_DataBindingComplete);
             // 
