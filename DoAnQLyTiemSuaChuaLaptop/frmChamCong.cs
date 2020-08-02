@@ -21,14 +21,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
         XLNHANVIEN tblNHANVIEN;
         XLCHAMCONG tblCHAMCONG;
  
-        private void frmChamCong_Load(object sender, EventArgs e)
-        {
-            tblNHANVIEN = new XLNHANVIEN();
-            tblCHAMCONG= new XLCHAMCONG();
-            loadNhanVien();
-            addcolNV();
-            dateNCCong.Value = DateTime.Now;
-        }
+
         private void loadNhanVien()
         {
             lbDSNV.DataSource = tblNHANVIEN;
@@ -49,6 +42,27 @@ namespace DoAnQLyTiemSuaChuaLaptop
             dgvNgayCC.AutoGenerateColumns = false;
             dgvNgayCC.DataSource = tblCHAMCONG;
         }
+        private void dateNCCong_ValueChanged(object sender, EventArgs e)
+        {
+            tblCHAMCONG.locDuLieu("Ngay='" + dateNCCong.Value.ToShortDateString() + "'");
+        }
+        private void frmChamCong_Load(object sender, EventArgs e)
+        {
+            tblNHANVIEN = new XLNHANVIEN();
+            tblCHAMCONG = new XLCHAMCONG();
+            loadNhanVien();
+            addcolNV();
+            dateNCCong.Value = DateTime.Now;
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            DataRow r = tblCHAMCONG.NewRow();
+            r["MaNV"] = lbDSNV.SelectedValue;
+            r["Ngay"] = dateNCCong.Value.ToShortDateString();
+            r["SoGio"] = numSoGio.Value;
+            tblCHAMCONG.Rows.Add(r);
+            tblCHAMCONG.ghi();
+        }
 
         private void dgvNgayCC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -68,10 +82,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
         }
 
-        private void dateNCCong_ValueChanged(object sender, EventArgs e)
-        {
-            tblCHAMCONG.locDuLieu("Ngay='" + dateNCCong.Value.ToShortDateString() + "'");
-        }
+
 
         private void dgvNgayCC_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -81,14 +92,12 @@ namespace DoAnQLyTiemSuaChuaLaptop
             }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+
+        private void btnTinhLuong_Click(object sender, EventArgs e)
         {
-            DataRow r = tblCHAMCONG.NewRow();
-            r["MaNV"] = lbDSNV.SelectedValue;
-            r["Ngay"] = dateNCCong.Value.ToShortDateString();
-            r["SoGio"] = numSoGio.Value;
-            tblCHAMCONG.Rows.Add(r);
-            tblCHAMCONG.ghi();
+            frmInBangLuong f = new frmInBangLuong();
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
         }
     }
 }

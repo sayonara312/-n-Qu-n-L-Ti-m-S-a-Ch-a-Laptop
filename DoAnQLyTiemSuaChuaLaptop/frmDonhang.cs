@@ -214,7 +214,6 @@ namespace DoAnQLyTiemSuaChuaLaptop
             {
                 MessageBox.Show("Kỹ thuật viên đã nhận công việc, chọn nhân viên khác");
                 return;
-
             }
             DataRow r = tblCTHD.NewRow();
             r["MaNV"] = cbNV.SelectedValue;
