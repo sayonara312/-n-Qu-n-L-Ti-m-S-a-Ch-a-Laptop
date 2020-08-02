@@ -10,6 +10,7 @@ namespace DoAnQLyTiemSuaChuaLaptop.Modules
     class XLBANG : DataTable
     {
         public static string cnnStr = "Data Source=.;Initial Catalog=QLTIEMSUACHUAMAYTINH;Integrated Security=True";
+        public static SqlConnection cnn = new SqlConnection(cnnStr);
         private static SqlConnection _cnn;
         private SqlDataAdapter _da = new SqlDataAdapter();
         private string _query; // Cau truy van
