@@ -207,7 +207,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             btnXoa.Enabled = capnhat;
             btnLuu.Enabled = capnhat;
             btnHuy.Enabled = capnhat;
-            dgvKhachHang.Enabled = capnhat;
+            dgvDonHang.Enabled = capnhat;
         }
 
     }

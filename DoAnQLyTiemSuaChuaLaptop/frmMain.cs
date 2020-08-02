@@ -125,5 +125,26 @@ namespace DoAnQLyTiemSuaChuaLaptop
                 f.Show();
             }
         }
+
+        private void btnChamCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControl1.TabPages.IndexOfKey("tabPageChamCong");
+            if (index >= 0)
+            {
+                tabControl1.SelectedIndex = index;
+            }
+            else
+            {
+                frmChamCong f = new frmChamCong();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageChamCong";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControl1.TabPages.Add(p);
+                f.Show();
+            }
+        }
     }
 }

@@ -54,8 +54,6 @@ namespace DoAnQLyTiemSuaChuaLaptop
             bindNV = this.BindingContext[tblNHANVIEN];
             dgvNhanVien.AutoGenerateColumns = false;
             dgvNhanVien.DataSource = tblNHANVIEN;
-
-            
         }
         private void enablebutton()
         {

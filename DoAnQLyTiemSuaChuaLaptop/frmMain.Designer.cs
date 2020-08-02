@@ -47,6 +47,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnChamCong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,9 +72,10 @@
             this.btnTaiChinh,
             this.btnHoaDon,
             this.barButtonItem8,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.btnChamCong});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2});
@@ -181,6 +183,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnDonHang);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnHoaDon);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnTaiChinh);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnChamCong);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Quản Lý";
             // 
@@ -211,6 +214,15 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(857, 383);
             this.tabControl1.TabIndex = 3;
+            // 
+            // btnChamCong
+            // 
+            this.btnChamCong.Caption = "Chấm Công";
+            this.btnChamCong.Id = 13;
+            this.btnChamCong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChamCong.ImageOptions.Image")));
+            this.btnChamCong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChamCong.ImageOptions.LargeImage")));
+            this.btnChamCong.Name = "btnChamCong";
+            this.btnChamCong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChamCong_ItemClick);
             // 
             // frmMain
             // 
@@ -248,6 +260,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnChamCong;
     }
 }
 

@@ -38,8 +38,9 @@ namespace DoAnQLyTiemSuaChuaLaptop
                 errorProvider1.SetError(tbNLKM, "Mật khẩu nhập lại không đúng .");
                 return;
             }
-            frmMain f = (frmMain)this.Parent;
-            int count=XLBANG.Thuc_hien_lenh("Update NHANVIEN set Password ='"+ tbMKM.Text+"' where maNV ='"+ f.maNV+"'");
+
+            frmMain f = (frmMain)this.MdiParent;
+            int count = XLBANG.Thuc_hien_lenh("Update NHANVIEN set Password ='"+ tbMKM.Text+ "' where MaNV ='"+ f.maNV+"'");
             if (count > 0)
             {
                 MessageBox.Show("Đổi mật khẩu thành công!!!");
