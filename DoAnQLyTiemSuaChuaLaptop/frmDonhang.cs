@@ -12,146 +12,110 @@ using DoAnQLyTiemSuaChuaLaptop.Modules;
 
 namespace DoAnQLyTiemSuaChuaLaptop
 {
-    public partial class frmDonhang : Form
+    public partial class frmDonHang : Form
     {
-        public frmDonhang()
+
+        public frmDonHang()
         {
             InitializeComponent();
         }
-        DataTable tblDONHANG, tblCTHD, tblKHACHHANG, tblNHANVIEN;
+        DataTable tblNHANVIEN,tblDONHANG,tblKHACHHANG,tblCTHD;
         SqlDataAdapter daDH, daCTHD, daKH, daNV;
-        BindingManagerBase bindDH, bindCTHD, bindKH, bindNV;
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bindKH.EndCurrentEdit();
-                bindNV.EndCurrentEdit();
-                bindCTHD.EndCurrentEdit();
-                bindDH.EndCurrentEdit();
-                daKH.Update(tblKHACHHANG);
-                daCTHD.Update(tblCTHD);
-                daDH.Update(tblDONHANG);
-                daKH.Update(tblKHACHHANG);
-                daNV.Update(tblNHANVIEN);
-                tblKHACHHANG.AcceptChanges();
-                tblCTHD.AcceptChanges();
-                tblDONHANG.AcceptChanges();
-                tblNHANVIEN.AcceptChanges();
-                MessageBox.Show("Lưu thành công!!!");
-                capnhat = false;
-                enablebutton();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            capnhat = true;
-            enablebutton();
-        }
-
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            bindKH.CancelCurrentEdit();
-            bindNV.CancelCurrentEdit();
-            bindCTHD.CancelCurrentEdit();
-            bindDH.CancelCurrentEdit();
-            tblKHACHHANG.RejectChanges();
-            tblCTHD.RejectChanges();
-            tblDONHANG.RejectChanges();
-            tblNHANVIEN.RejectChanges();
-            capnhat = false;
-            enablebutton();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            int index = bindKH.Position;
-            int index1 = bindNV.Position;
-            int index2 = bindCTHD.Position;
-            int index3 = bindDH.Position;
-            if (index1 >= 0 && index >=0 && index2>=0 && index3 >=0)
-                bindKH.RemoveAt(index);
-                bindNV.RemoveAt(index1);
-                bindCTHD.RemoveAt(index2);
-                bindDH.RemoveAt(index3);
-        }
-
-        private void dgvDonHang_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow r in dgvDonHang.Rows)
-            {
-                r.Cells[0].Value = r.Index + 1;
-            }
-        }
         bool capnhat;
-
-
-        private void loadDSKH()
+        private void cbSDT_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbMaDH.DataBindings.Add("text", tblDONHANG, "MaDH", true);
-            tbTenKH.DataBindings.Add("text", tblKHACHHANG, "TenKH", true);
-            tbSDT.DataBindings.Add("text", tblKHACHHANG, "SoDT", true);
-            tbKTS.DataBindings.Add("text", tblNHANVIEN, "TenNV", true);
-            dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLap", true);
-            tbTenMay.DataBindings.Add("text", tblDONHANG, "TenMay", true);
-            tbTTM.DataBindings.Add("text", tblDONHANG, "TrinhTrangMay", true);
-            tbTenDV.DataBindings.Add("text", tblCTHD, "TenDichVu", true);
-            tbSoTien.DataBindings.Add("text", tblCTHD, "SoTien", true);
-
-            bindKH = this.BindingContext[tblKHACHHANG];
-            bindDH = this.BindingContext[tblDONHANG];
-            bindDH = this.BindingContext[tblNHANVIEN];
+            int index = cbSDT.SelectedIndex;
+            if (index >= 0)
+            {
+                tbTenKH.Text = tblKHACHHANG.Rows[index]["TenKH"].ToString();
+                tbDiaChi.Text = tblKHACHHANG.Rows[index]["DiaChi"].ToString();
+            }
+            else
+            {
+                tbTenKH.Text = "";
+                tbDiaChi.Text = "";
+            }
         }
-        private void loadTrangThai()
+        private void loadNHANVIEN()
         {
-            cbTrangThai.DataSource = tblCTHD;
-            cbTrangThai.ValueMember = "MaCTHD";
-            cbTrangThai.DisplayMember = "TrangThai";
-            cbTrangThai.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cbTrangThai.AutoCompleteSource = AutoCompleteSource.ListItems;
-
+            cbNV.DataSource = tblNHANVIEN;
+            cbNV.ValueMember = "MaNV";
+            cbNV.DisplayMember = "TenNV";
+            cbNV.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbNV.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbNV.SelectedIndex = -1;
         }
+        private void bdHD_PositionChanged(object sender, EventArgs e)
+        {
+            tblCTHD.DefaultView.RowFilter = "MaDH='" + tbMaDH.Text + "'";
+            int s = 0;
+            foreach (DataRowView r in tblCTHD.DefaultView)
+            {
+                s += int.Parse(r["SoTien"].ToString());
 
+            }
+            tbTien.Text = s.ToString();
+        }
 
         private void addColCTHD()
         {
             DataSet ds = new DataSet();
-            ds.Tables.AddRange(new DataTable[] { tblDONHANG, tblKHACHHANG, tblCTHD, tblNHANVIEN });
-            DataRelation qh = new DataRelation("FRK_DONHANG_CTHD", tblDONHANG.Columns["MaDH"], tblCTHD.Columns["MaDH"]);
-            DataRelation qh1 = new DataRelation("FRK_KHACHHANG_CTHD", tblKHACHHANG.Columns["MaKH"], tblCTHD.Columns["MaKH"]);
-            DataRelation qh2 = new DataRelation("FRK_NHANVIEN_CTHD", tblNHANVIEN.Columns["MaNV"], tblCTHD.Columns["MaNV"]);
+            ds.Tables.AddRange(new DataTable[] { tblCTHD, tblNHANVIEN });
+
+            DataRelation qh = new DataRelation("FRK_NHANVIEN_CTHD", tblNHANVIEN.Columns["MaNV"], tblCTHD.Columns["MaNV"]);
+
             ds.Relations.Add(qh);
-            ds.Relations.Add(qh1);
-            ds.Relations.Add(qh2);
-            DataColumn cot_TenKH = new DataColumn("TenKH", Type.GetType("System.String"), "Parent(FRK_DONHANG_CTHD).TenKH");
-            DataColumn cot_SoDT = new DataColumn("SoDT", Type.GetType("System.String"), "Parent (FRK_KHACHHANG_CTHD).SoDT");
-            DataColumn cot_NgayLap = new DataColumn("NgayLap", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).NgayLap");
-            DataColumn cot_TrinhTrangMay = new DataColumn("TrinhTrangMay", Type.GetType("System.String"), "Parent (FRK_DONHANG_CTHD).TrinhTrangMay");
+
             DataColumn cot_TenNV = new DataColumn("TenNV", Type.GetType("System.String"), "Parent (FRK_NHANVIEN_CTHD).TenNV");
-            tblCTHD.Columns.Add(cot_TenKH);
-            tblCTHD.Columns.Add(cot_SoDT);
-            tblCTHD.Columns.Add(cot_NgayLap);
+
             tblCTHD.Columns.Add(cot_TenNV);
-            tblCTHD.Columns.Add(cot_TrinhTrangMay);
+
         }
+        private void loadKH()
+        {
+            cbSDT.DataSource = tblKHACHHANG;
+            cbSDT.ValueMember = "MaKH";
+            cbSDT.DisplayMember = "SoDT";
+            cbSDT.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbSDT.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-
+        }
         private void loadCTHD()
         {
+            tbTTM.DataBindings.Add("text", tblCTHD, "TrinhTrangMay", true);
+            tbTenDichVu.DataBindings.Add("text", tblCTHD, "TenDichVu", true);
+            tbTrangThai.DataBindings.Add("text", tblCTHD, "TrangThai", true);
+            tbHinhThucSua.DataBindings.Add("text", tblCTHD, "HinhThucSua", true);
             bindCTHD = this.BindingContext[tblCTHD];
-            dgvDonHang.AutoGenerateColumns = false;
-            dgvDonHang.DataSource = tblCTHD;
+            dgvCTHD.AutoGenerateColumns = false;
+            dgvCTHD.DataSource = tblCTHD;
+
+        }
+        private void loadDONHANG()
+        {
+            tbMaDH.DataBindings.Add("text", tblDONHANG, "MaDH", true);
+            dateNLap.DataBindings.Add("value", tblDONHANG, "NgayLap", true);
+            cbSDT.DataBindings.Add("SelectedValue", tblDONHANG, "MaKH", true);
+            tbTenMay.DataBindings.Add("text", tblDONHANG, "TenMay", true);
+            tbLoaiMay.DataBindings.Add("text", tblDONHANG, "LoaiMay", true);
+            bindDH = this.BindingContext[tblDONHANG];
+            bindDH.PositionChanged += new EventHandler(bdHD_PositionChanged);
+            
+        }
+        private void enableButton()
+        {
+            btnNew.Enabled = !capnhat;
+            btnUpdate.Enabled = !capnhat;
+            btnDelete.Enabled = !capnhat;
+            btnCancel.Enabled = capnhat;
+            btnSave.Enabled = capnhat;
+            btnAdd.Enabled = capnhat;
+            btnDeleteCTHD.Enabled = capnhat;
+            dgvCTHD.Enabled = capnhat;
+
         }
 
-
-        private void frmDonhang_Load(object sender, EventArgs e)
+        private void frmDonHang_Load(object sender, EventArgs e)
         {
             tblDONHANG = new DataTable();
             tblKHACHHANG = new DataTable();
@@ -176,39 +140,194 @@ namespace DoAnQLyTiemSuaChuaLaptop
             {
                 MessageBox.Show(ex.ToString());
             }
-            loadTrangThai();
+            loadKH();
+            loadDONHANG();
             loadCTHD();
+            loadNHANVIEN();
             addColCTHD();
-            loadDSKH();
             capnhat = false;
+            enableButton();
+            bdHD_PositionChanged(sender, e);
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
+        BindingManagerBase bindDH, bindCTHD, bindKH, bindNV;
 
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            bindDH.Position = bindDH.Count - 1;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            bindDH.AddNew();
+            dateNLap.Value = DateTime.Now;
+            try
+            {
+                SqlCommand cmm = new SqlCommand("Select  dbo.fn_CreateMaDH()", XLDONHANG.cnn);
+                XLDONHANG.cnn.Open();
+                tbMaDH.Text = cmm.ExecuteScalar().ToString();
+                capnhat = true;
+                enableButton();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            XLDONHANG.cnn.Close();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int index = bindCTHD.Position;
+            if (index >= 0)
+            {
+                bindCTHD.RemoveAt(index);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            bindCTHD.CancelCurrentEdit();
+            tblCTHD.RejectChanges();
+            bindDH.CancelCurrentEdit();
+            tblDONHANG.RejectChanges();
+            bdHD_PositionChanged(sender, e);
+            capnhat = false;
+            enableButton();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (cbNV.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn kỹ thuật viên!!");
+                return;
+            }
+            int count = tblCTHD.Select("MaDH= '" + tbMaDH.Text + "' and MaNV= '" + cbNV.SelectedValue + "'").Count();
+            if (count > 0)
+            {
+                MessageBox.Show("Kỹ thuật viên đã nhận công việc, chọn nhân viên khác");
+                return;
+
+            }
             DataRow r = tblCTHD.NewRow();
+            r["MaNV"] = cbNV.SelectedValue;
             r["MaDH"] = tbMaDH.Text;
-            r["TenKH"] = tbTenKH.Text;
-            r["SoDT"] = tbSDT.Text;
-            r["TenNV"] = tbKTS.Text;
-            r["NgayLap"] = dateNLap.Value;
-            r["TenMay"] = tbTenMay.Text;
+            r["SoTien"] = tbTien.Text;
             r["TrinhTrangMay"] = tbTTM.Text;
-            r["TrangThai"] = cbTrangThai.SelectedText;
-            r["TenDichVu"] = tbTenDV.Text;
-            r["SoTien"] = tbSoTien.Text;
+            r["TenDichVu"] = tbTenDichVu.Text;
+            r["HinhThucSua"] = tbHinhThucSua.Text;
+            r["TrangThai"] = tbTrangThai.Text;
             tblCTHD.Rows.Add(r);
-            capnhat = true;
-            enablebutton();
-        }
-        private void enablebutton()
-        {
-            btnThem.Enabled = !capnhat;
-            btnXoa.Enabled = capnhat;
-            btnLuu.Enabled = capnhat;
-            btnHuy.Enabled = capnhat;
-            dgvKhachHang.Enabled = capnhat;
+            bdHD_PositionChanged(sender, e);
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (cbSDT.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn chức năng ");
+                return;
+            }
+            try
+            {
+                bindDH.EndCurrentEdit();
+                daDH.Update(tblDONHANG);
+                tblDONHANG.AcceptChanges();
+
+
+                bindCTHD.EndCurrentEdit();
+                daCTHD.Update(tblCTHD);
+                tblCTHD.AcceptChanges();
+
+                MessageBox.Show("Cập nhật thành công ");
+                capnhat = false;
+                enableButton();
+            }
+            catch (SqlException ex)
+            {
+                tblCTHD.RejectChanges();
+                tblDONHANG.RejectChanges();
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            capnhat = true;
+            enableButton();
+        }
+
+        private void btnDeleteCTHD_Click(object sender, EventArgs e)
+        {
+            int index = bindCTHD.Position;
+            if (index >= 0)
+            {
+                bindCTHD.RemoveAt(index);
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (bindDH.Position < bindDH.Count - 1)
+            {
+                bindDH.Position += 1;
+
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (bindDH.Position > 0)
+            {
+                bindDH.Position -= 1;
+            }
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            bindDH.Position = 0;
+        }
+
+        private void dgvCTHD_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgvCTHD.Rows)
+            {
+                r.Cells[0].Value = r.Index + 1;
+            }
+        }
+
+    
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -85,7 +85,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             }
             else
             {
-                frmDonhang f = new frmDonhang();
+                frmDonHang f = new frmDonHang();
                 TabPage p = new TabPage(f.Text);
                 p.Name = "tabPageQLDONHANG";
                 f.TopLevel = false;
