@@ -60,6 +60,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             r["MaNV"] = lbDSNV.SelectedValue;
             r["Ngay"] = dateNCCong.Value.ToShortDateString();
             r["SoGio"] = numSoGio.Value;
+            
             tblCHAMCONG.Rows.Add(r);
             tblCHAMCONG.ghi();
         }

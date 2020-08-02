@@ -23,7 +23,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             string query = "SELECT        NHANVIEN.MaNV, NHANVIEN.TenNV, CHAMCONG.Ngay, CHAMCONG.SoGio, CHAMCONG.SoGio * 30000 AS ThanhTien"+
                             "FROM NHANVIEN INNER JOIN CHAMCONG ON NHANVIEN.MaNV = CHAMCONG.MaNV "+
-                            "where month(ngay)=" + DateTime.Now.Month + "and year(ngay)=" + DateTime.Now.Year;
+                            "where month(Ngay)=" + DateTime.Now.Month + "and year(Ngay)=" + DateTime.Now.Year;
             DataTable tblTinhLuong = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(query, XLBANG.cnn);
             try

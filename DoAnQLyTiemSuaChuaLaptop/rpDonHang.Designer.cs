@@ -436,6 +436,13 @@ namespace DoAnQLyTiemSuaChuaLaptop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DataTable1Row FindByMaDH(string MaDH) {
+                return ((DataTable1Row)(this.Rows.Find(new object[] {
+                            MaDH})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
                 cln.InitVars();
@@ -477,7 +484,10 @@ namespace DoAnQLyTiemSuaChuaLaptop {
                 base.Columns.Add(this.columnHinhThucSua);
                 this.columnSoTien = new global::System.Data.DataColumn("SoTien", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoTien);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnMaDH}, true));
                 this.columnMaDH.AllowDBNull = false;
+                this.columnMaDH.Unique = true;
                 this.columnMaDH.MaxLength = 10;
                 this.columnTenKH.AllowDBNull = false;
                 this.columnTenKH.MaxLength = 50;
@@ -938,7 +948,7 @@ namespace DoAnQLyTiemSuaChuaLaptop.rpDonHangTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CTHD.MaDH, KHACHHANG.TenKH, DONHANG.TenMay, CTHD.TrinhTrangMay, CTHD.TenDichVu, CTHD.HinhThucSua, CTHD.SoTien
+            this._commandCollection[0].CommandText = @"SELECT        KHACHHANG.TenKH, DONHANG.TenMay, CTHD.TrinhTrangMay, CTHD.TenDichVu, CTHD.HinhThucSua, CTHD.SoTien, DONHANG.MaDH
 FROM            CTHD INNER JOIN
                          DONHANG ON CTHD.MaDH = DONHANG.MaDH INNER JOIN
                          KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH INNER JOIN

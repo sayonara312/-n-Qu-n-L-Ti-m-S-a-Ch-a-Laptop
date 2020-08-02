@@ -181,7 +181,7 @@
             // 
             // NgayCC
             // 
-            this.NgayCC.DataPropertyName = "NgayCC";
+            this.NgayCC.DataPropertyName = "Ngay";
             this.NgayCC.HeaderText = "Ngày Chấm Công";
             this.NgayCC.Name = "NgayCC";
             // 

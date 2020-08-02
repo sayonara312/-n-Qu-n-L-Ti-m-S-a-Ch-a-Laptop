@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptTinhLuong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.rptvTinhLuong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // rptTinhLuong
+            // rptvTinhLuong
             // 
-            this.rptTinhLuong.ActiveViewIndex = -1;
-            this.rptTinhLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rptTinhLuong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rptTinhLuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptTinhLuong.Location = new System.Drawing.Point(0, 0);
-            this.rptTinhLuong.Name = "rptTinhLuong";
-            this.rptTinhLuong.Size = new System.Drawing.Size(800, 450);
-            this.rptTinhLuong.TabIndex = 0;
-            this.rptTinhLuong.Load += new System.EventHandler(this.rptTinhLuong_Load);
+            this.rptvTinhLuong.ActiveViewIndex = -1;
+            this.rptvTinhLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptvTinhLuong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rptvTinhLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptvTinhLuong.Location = new System.Drawing.Point(0, 0);
+            this.rptvTinhLuong.Name = "rptvTinhLuong";
+            this.rptvTinhLuong.Size = new System.Drawing.Size(800, 450);
+            this.rptvTinhLuong.TabIndex = 0;
             // 
             // frmInBangLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rptTinhLuong);
+            this.Controls.Add(this.rptvTinhLuong);
             this.Name = "frmInBangLuong";
             this.Text = "frmChamCong";
             this.Load += new System.EventHandler(this.frmInBangLuong_Load);
@@ -58,6 +57,6 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptTinhLuong;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptvTinhLuong;
     }
 }

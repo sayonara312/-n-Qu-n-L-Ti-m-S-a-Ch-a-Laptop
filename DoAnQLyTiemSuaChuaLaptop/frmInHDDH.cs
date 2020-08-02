@@ -17,16 +17,21 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             InitializeComponent();
         }
-
+        public string MaDH;
         private void frmInHDDH_Load(object sender, EventArgs e)
         {
-            string query = "SELECT DONHANG.TenMay, DONHANG.NgayLap, DONHANG.MaDH, CTHD.SoTien, CTHD.TrinhTrangMay, CTHD.HinhThucSua, CTHD.TenDichVu, KHACHHANG.TenKH" +
-                "FROM DONHANG INNER JOIN CTHD ON DONHANG.MaDH = CTHD.MaDH INNER JOIN KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH INNER JOIN NHANVIEN ON CTHD.MaNV = NHANVIEN.MaNV" +
-                "where month(Ngay) = "+ DateTime.Now.Month + "and year(Ngay)=" + DateTime.Now.Year;
-            DataTable tblHDDH = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(query, XLBANG.cnnStr);
+            var query = "SELECT KH.TenKH, DH.TenMay, CT.TrinhTrangMay, CT.TenDichVu, CT.HinhThucSua, CT.SoTien, DH.MaDH "
+                        +" FROM  CTHD CT INNER JOIN "
+                        +" DONHANG DH ON CT.MaDH = DH.MaDH INNER JOIN "
+                        +" KHACHHANG KH ON DH.MaKH = KH.MaKH INNER JOIN "
+                        +" NHANVIEN  NV ON CT.MaNV = NV.MaNV"+
+                        "where DH.MaDH='" + MaDH +"'";
+
+           
+            SqlDataAdapter da = new SqlDataAdapter(query, XLBANG.cnn);
             try
             {
+                DataTable tblHDDH = new DataTable();
                 da.Fill(tblHDDH);
                 rptDonHang rpt = new rptDonHang();
                 rpt.SetDataSource(tblHDDH);
