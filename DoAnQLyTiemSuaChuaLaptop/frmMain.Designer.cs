@@ -38,8 +38,8 @@
             this.btnDonHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnTaiChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnHoaDon = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTroGiup = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLienHe = new DevExpress.XtraBars.BarButtonItem();
             this.btnChamCong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -71,8 +71,8 @@
             this.btnDonHang,
             this.btnTaiChinh,
             this.btnHoaDon,
-            this.barButtonItem8,
-            this.barButtonItem1,
+            this.btnTroGiup,
+            this.btnLienHe,
             this.btnChamCong});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 14;
@@ -143,21 +143,23 @@
             this.btnHoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.ImageOptions.LargeImage")));
             this.btnHoaDon.Name = "btnHoaDon";
             // 
-            // barButtonItem8
+            // btnTroGiup
             // 
-            this.barButtonItem8.Caption = "Trợ Giúp";
-            this.barButtonItem8.Id = 8;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.btnTroGiup.Caption = "Trợ Giúp";
+            this.btnTroGiup.Id = 8;
+            this.btnTroGiup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.btnTroGiup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.btnTroGiup.Name = "btnTroGiup";
+            this.btnTroGiup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTroGiup_ItemClick);
             // 
-            // barButtonItem1
+            // btnLienHe
             // 
-            this.barButtonItem1.Caption = "Liên Hệ";
-            this.barButtonItem1.Id = 11;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnLienHe.Caption = "Liên Hệ";
+            this.btnLienHe.Id = 11;
+            this.btnLienHe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnLienHe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnLienHe.Name = "btnLienHe";
+            this.btnLienHe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLienHe_ItemClick);
             // 
             // btnChamCong
             // 
@@ -197,8 +199,8 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnLienHe);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnTroGiup);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Hỗ Trợ";
             // 
@@ -250,14 +252,14 @@
         private DevExpress.XtraBars.BarButtonItem btnDonHang;
         private DevExpress.XtraBars.BarButtonItem btnTaiChinh;
         private DevExpress.XtraBars.BarButtonItem btnHoaDon;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem btnTroGiup;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private System.Windows.Forms.TabControl tabControl1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnLienHe;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnChamCong;
     }

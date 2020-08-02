@@ -146,5 +146,47 @@ namespace DoAnQLyTiemSuaChuaLaptop
                 f.Show();
             }
         }
+
+        private void btnLienHe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControl1.TabPages.IndexOfKey("tabPageLienHe");
+            if (index >= 0)
+            {
+                tabControl1.SelectedIndex = index;
+            }
+            else
+            {
+                frmLienHe f = new frmLienHe();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageLienHe";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControl1.TabPages.Add(p);
+                f.Show();
+            }
+        }
+
+        private void btnTroGiup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControl1.TabPages.IndexOfKey("tabPageTroGiup");
+            if (index >= 0)
+            {
+                tabControl1.SelectedIndex = index;
+            }
+            else
+            {
+                frmTroGiup f = new frmTroGiup();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageTroGiup";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControl1.TabPages.Add(p);
+                f.Show();
+            }
+        }
     }
 }

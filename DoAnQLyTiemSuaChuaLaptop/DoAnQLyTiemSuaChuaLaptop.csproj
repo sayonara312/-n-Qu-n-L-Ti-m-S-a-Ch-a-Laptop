@@ -119,6 +119,12 @@
     <Compile Include="frmInHDDH.Designer.cs">
       <DependentUpon>frmInHDDH.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLienHe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLienhe.Designer.cs">
+      <DependentUpon>frmLienHe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,12 @@
     </Compile>
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTroGiup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTroGiup.Designer.cs">
+      <DependentUpon>frmTroGiup.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\XLCHAMCONG.cs">
       <SubType>Component</SubType>
@@ -195,6 +207,9 @@
     <EmbeddedResource Include="frmInHDDH.resx">
       <DependentUpon>frmInHDDH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLienHe.resx">
+      <DependentUpon>frmLienHe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTroGiup.resx">
+      <DependentUpon>frmTroGiup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
