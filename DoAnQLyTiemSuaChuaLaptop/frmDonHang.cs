@@ -157,7 +157,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             
         }
 
-        BindingManagerBase bindDH, bindCTHD, bindKH, bindNV;
+        BindingManagerBase bindDH, bindCTHD;
 
         private void btnLast_Click(object sender, EventArgs e)
         {

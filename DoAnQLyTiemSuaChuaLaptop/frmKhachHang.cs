@@ -154,7 +154,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Không tìm thấy");
             }

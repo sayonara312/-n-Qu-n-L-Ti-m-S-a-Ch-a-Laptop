@@ -84,10 +84,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dsTinhLuong.Designer.cs">
+    <Compile Include="dsTinhLuong1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsTinhLuong.xsd</DependentUpon>
+      <DependentUpon>dsTinhLuong1.xsd</DependentUpon>
     </Compile>
     <Compile Include="frmChamCong.cs">
       <SubType>Form</SubType>
@@ -243,16 +243,16 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTinhLuong.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="dsTinhLuong.xsc">
-      <DependentUpon>dsTinhLuong.xsd</DependentUpon>
+    <None Include="dsTinhLuong1.xsc">
+      <DependentUpon>dsTinhLuong1.xsd</DependentUpon>
     </None>
-    <None Include="dsTinhLuong.xsd">
+    <None Include="dsTinhLuong1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTinhLuong.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsTinhLuong1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsTinhLuong.xss">
-      <DependentUpon>dsTinhLuong.xsd</DependentUpon>
+    <None Include="dsTinhLuong1.xss">
+      <DependentUpon>dsTinhLuong1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
