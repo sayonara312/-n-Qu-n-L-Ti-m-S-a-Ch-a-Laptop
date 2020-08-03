@@ -147,8 +147,8 @@
             // 
             this.btnTroGiup.Caption = "Trợ Giúp";
             this.btnTroGiup.Id = 8;
-            this.btnTroGiup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.btnTroGiup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.btnTroGiup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.ImageOptions.Image")));
+            this.btnTroGiup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.ImageOptions.LargeImage")));
             this.btnTroGiup.Name = "btnTroGiup";
             this.btnTroGiup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTroGiup_ItemClick);
             // 
@@ -156,8 +156,8 @@
             // 
             this.btnLienHe.Caption = "Liên Hệ";
             this.btnLienHe.Id = 11;
-            this.btnLienHe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnLienHe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnLienHe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLienHe.ImageOptions.Image")));
+            this.btnLienHe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLienHe.ImageOptions.LargeImage")));
             this.btnLienHe.Name = "btnLienHe";
             this.btnLienHe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLienHe_ItemClick);
             // 
@@ -192,7 +192,6 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNhanVien);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnKhachHang);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnDonHang);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnHoaDon);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnChamCong);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Quản Lý";

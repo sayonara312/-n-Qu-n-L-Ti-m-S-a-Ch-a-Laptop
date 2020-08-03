@@ -7,24 +7,24 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLTIEMSUACHUAMAYTINHConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLTIEMSUACHUAMAYTINHConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DoAnQLyTiemSuaChuaLaptop.Properties.Settings.GlobalReference.Default.QLTIEMSUACHUAMAYTINHConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLTIEMSUACHUAMAYTINHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLTIEMSUACHUAMAYTINHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CHAMCONG.Ngay, CHAMCONG.SoGio, NHANVIEN.MaNV, NHANVIEN.TenNV, CHAMCONG.SoGio * 50000 AS ThanhTien
-FROM            CHAMCONG INNER JOIN
-                         NHANVIEN ON CHAMCONG.MaNV = NHANVIEN.MaNV</CommandText>
+                    <CommandText>SELECT        NHANVIEN.MaNV, NHANVIEN.TenNV, CHAMCONG.Ngay, CHAMCONG.SoGio, CHAMCONG.SoGio * 50000 AS ThanhTien
+FROM            NHANVIEN INNER JOIN
+                         CHAMCONG ON NHANVIEN.MaNV = CHAMCONG.MaNV</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Ngay" DataSetColumn="Ngay" />
-              <Mapping SourceColumn="SoGio" DataSetColumn="SoGio" />
               <Mapping SourceColumn="MaNV" DataSetColumn="MaNV" />
               <Mapping SourceColumn="TenNV" DataSetColumn="TenNV" />
+              <Mapping SourceColumn="Ngay" DataSetColumn="Ngay" />
+              <Mapping SourceColumn="SoGio" DataSetColumn="SoGio" />
               <Mapping SourceColumn="ThanhTien" DataSetColumn="ThanhTien" />
             </Mappings>
             <Sources />
@@ -37,11 +37,9 @@ FROM            CHAMCONG INNER JOIN
   <xs:element name="dsTinhLuong1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTinhLuong1" msprop:Generator_UserDSName="dsTinhLuong1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Ngay" msprop:Generator_ColumnVarNameInTable="columnNgay" msprop:Generator_ColumnPropNameInRow="Ngay" msprop:Generator_ColumnPropNameInTable="NgayColumn" msprop:Generator_UserColumnName="Ngay" type="xs:dateTime" />
-              <xs:element name="SoGio" msprop:Generator_ColumnVarNameInTable="columnSoGio" msprop:Generator_ColumnPropNameInRow="SoGio" msprop:Generator_ColumnPropNameInTable="SoGioColumn" msprop:Generator_UserColumnName="SoGio" type="xs:int" />
               <xs:element name="MaNV" msprop:Generator_ColumnVarNameInTable="columnMaNV" msprop:Generator_ColumnPropNameInRow="MaNV" msprop:Generator_ColumnPropNameInTable="MaNVColumn" msprop:Generator_UserColumnName="MaNV">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -56,6 +54,8 @@ FROM            CHAMCONG INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Ngay" msprop:Generator_ColumnVarNameInTable="columnNgay" msprop:Generator_ColumnPropNameInRow="Ngay" msprop:Generator_ColumnPropNameInTable="NgayColumn" msprop:Generator_UserColumnName="Ngay" type="xs:dateTime" />
+              <xs:element name="SoGio" msprop:Generator_ColumnVarNameInTable="columnSoGio" msprop:Generator_ColumnPropNameInRow="SoGio" msprop:Generator_ColumnPropNameInTable="SoGioColumn" msprop:Generator_UserColumnName="SoGio" type="xs:int" />
               <xs:element name="ThanhTien" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnThanhTien" msprop:Generator_ColumnPropNameInRow="ThanhTien" msprop:Generator_ColumnPropNameInTable="ThanhTienColumn" msprop:Generator_UserColumnName="ThanhTien" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -63,7 +63,7 @@ FROM            CHAMCONG INNER JOIN
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:selector xpath=".//mstns:DataTable2" />
       <xs:field xpath="mstns:MaNV" />
     </xs:unique>
   </xs:element>

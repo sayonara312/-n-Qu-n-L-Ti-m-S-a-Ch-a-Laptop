@@ -19,13 +19,15 @@ namespace DoAnQLyTiemSuaChuaLaptop
         {
             InitializeComponent();
         }
-
+        bool capnhat;
         private void frmMain_Load(object sender, EventArgs e)
         {
             frmDangNhap f = new frmDangNhap(this);
             f.StartPosition = FormStartPosition.CenterScreen;
             f.WindowState = FormWindowState.Normal;
             f.ShowDialog();
+            capnhat = true;
+            enabledbutton();
         }
 
         private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -51,7 +53,16 @@ namespace DoAnQLyTiemSuaChuaLaptop
             }
 
         }
-
+        public void enabledbutton()
+        {
+            btnDangXuat.Enabled = !capnhat;
+            btnDoiMatKhau.Enabled = !capnhat;
+            btnDonHang.Enabled = !capnhat;
+            btnKhachHang.Enabled = !capnhat;
+            btnNhanVien.Enabled = !capnhat;
+            btnChamCong.Enabled = !capnhat;
+            
+        }
         private void btnKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int index = tabControl1.TabPages.IndexOfKey("tabPageQLKHACHHANG");

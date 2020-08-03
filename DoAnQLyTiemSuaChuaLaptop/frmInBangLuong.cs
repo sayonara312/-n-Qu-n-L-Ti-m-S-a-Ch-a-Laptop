@@ -21,22 +21,16 @@ namespace DoAnQLyTiemSuaChuaLaptop
 
         private void frmInBangLuong_Load(object sender, EventArgs e)
         {
-            string query = "SELECT        CHAMCONG.Ngay, CHAMCONG.SoGio, NHANVIEN.MaNV, NHANVIEN.TenNV, CHAMCONG.SoGio * 50000 AS ThanhTien" +
-                           "FROM CHAMCONG INNER JOIN NHANVIEN ON CHAMCONG.MaNV = NHANVIEN.MaNV" +
-                           "where month(Ngay)=" + DateTime.Now.Month + "and year(Ngay)=" + DateTime.Now.Year;
-            DataTable tblTinhLuong = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(query, XLBANG.cnn);
-            try
-            {
-                da.Fill(tblTinhLuong);
+            DataTable dt = new DataTable();
+            Connect kn = new Connect();
+            dt = kn.laybang("SELECT  NHANVIEN.MaNV, NHANVIEN.TenNV, CHAMCONG.Ngay, CHAMCONG.SoGio, CHAMCONG.SoGio * 50000 AS ThanhTien "+
+                            " FROM  NHANVIEN INNER JOIN "+
+                            " CHAMCONG ON NHANVIEN.MaNV = CHAMCONG.MaNV");
+
                 rptTinhLuong rpt = new rptTinhLuong();
-                rpt.SetDataSource(tblTinhLuong);
+                rpt.SetDataSource(dt);
                 rptvTinhLuong.ReportSource = rpt;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            
         }
     }
 }

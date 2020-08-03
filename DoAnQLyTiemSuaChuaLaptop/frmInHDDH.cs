@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using DoAnQLyTiemSuaChuaLaptop.Modules;
+
 namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmInHDDH : Form
@@ -20,27 +20,19 @@ namespace DoAnQLyTiemSuaChuaLaptop
         public string MaDH;
         private void frmInHDDH_Load(object sender, EventArgs e)
         {
-            var query = "SELECT KH.TenKH, DH.TenMay, CT.TrinhTrangMay, CT.TenDichVu, CT.HinhThucSua, CT.SoTien, DH.MaDH "
-                        +" FROM  CTHD CT INNER JOIN "
-                        +" DONHANG DH ON CT.MaDH = DH.MaDH INNER JOIN "
-                        +" KHACHHANG KH ON DH.MaKH = KH.MaKH INNER JOIN "
-                        +" NHANVIEN  NV ON CT.MaNV = NV.MaNV"+
-                        "where DH.MaDH='" + MaDH +"'";
+            DataTable dt = new DataTable();
+            Connect kn = new Connect();
 
-           
-            SqlDataAdapter da = new SqlDataAdapter(query, XLBANG.cnn);
-            try
-            {
-                DataTable tblHDDH = new DataTable();
-                da.Fill(tblHDDH);
+
+            dt = kn.laybang( "SELECT DONHANG.MaDH, KHACHHANG.TenKH, DONHANG.TenMay, CTHD.TrinhTrangMay, CTHD.TenDichVu, CTHD.HinhThucSua, CTHD.SoTien " +
+                        " FROM CTHD INNER JOIN " +
+                        " DONHANG ON CTHD.MaDH = DONHANG.MaDH INNER JOIN " +
+                        " KHACHHANG ON DONHANG.MaKH = KHACHHANG.MaKH");
+
                 rptDonHang rpt = new rptDonHang();
-                rpt.SetDataSource(tblHDDH);
+                rpt.SetDataSource(dt);
                 rptvDonHang.ReportSource = rpt;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            
         }
     }
 }
