@@ -177,5 +177,12 @@ namespace DoAnQLyTiemSuaChuaLaptop
             capnhat = true;
             enablebutton();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            TabPage p = (TabPage)this.Parent;
+            TabControl tabmain = (TabControl)p.Parent;
+            tabmain.TabPages.Remove(p);
+        }
     }
 }

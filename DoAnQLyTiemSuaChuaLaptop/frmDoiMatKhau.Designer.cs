@@ -90,7 +90,7 @@
             // btnDMK
             // 
             this.btnDMK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDMK.ImageOptions.Image")));
-            this.btnDMK.Location = new System.Drawing.Point(43, 139);
+            this.btnDMK.Location = new System.Drawing.Point(34, 139);
             this.btnDMK.Name = "btnDMK";
             this.btnDMK.Size = new System.Drawing.Size(112, 35);
             this.btnDMK.TabIndex = 7;
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 202);
+            this.ClientSize = new System.Drawing.Size(276, 202);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDMK);
             this.Controls.Add(this.tbNLKM);

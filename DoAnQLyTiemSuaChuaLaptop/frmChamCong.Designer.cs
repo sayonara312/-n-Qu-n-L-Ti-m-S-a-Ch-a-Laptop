@@ -46,6 +46,7 @@
             this.SoGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoGio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNgayCC)).BeginInit();
@@ -62,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.lbDSNV);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnTinhLuong);
@@ -72,7 +74,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(25, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(494, 203);
+            this.groupBox1.Size = new System.Drawing.Size(550, 203);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chấm Công";
@@ -81,7 +83,7 @@
             // lbDSNV
             // 
             this.lbDSNV.FormattingEnabled = true;
-            this.lbDSNV.Location = new System.Drawing.Point(296, 54);
+            this.lbDSNV.Location = new System.Drawing.Point(376, 58);
             this.lbDSNV.Name = "lbDSNV";
             this.lbDSNV.Size = new System.Drawing.Size(168, 121);
             this.lbDSNV.TabIndex = 7;
@@ -89,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(293, 38);
+            this.label3.Location = new System.Drawing.Point(373, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 13);
             this.label3.TabIndex = 6;
@@ -207,6 +209,16 @@
             this.Xoa.UseColumnTextForButtonValue = true;
             this.Xoa.Width = 50;
             // 
+            // btnExit
+            // 
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
+            this.btnExit.Location = new System.Drawing.Point(245, 118);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(106, 61);
+            this.btnExit.TabIndex = 31;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,5 +258,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoGio;
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

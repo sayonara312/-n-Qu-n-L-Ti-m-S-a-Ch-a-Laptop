@@ -26,8 +26,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
             f.StartPosition = FormStartPosition.CenterScreen;
             f.WindowState = FormWindowState.Normal;
             f.ShowDialog();
-            capnhat = true;
-            enabledbutton();
+
         }
 
         private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

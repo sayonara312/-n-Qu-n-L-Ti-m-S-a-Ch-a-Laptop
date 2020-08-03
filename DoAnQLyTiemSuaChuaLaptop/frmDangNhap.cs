@@ -12,7 +12,7 @@ namespace DoAnQLyTiemSuaChuaLaptop
 {
     public partial class frmDangNhap : Form
     {
-        
+
         public frmDangNhap(frmMain pf)
         {
             fMain = pf;
@@ -36,11 +36,9 @@ namespace DoAnQLyTiemSuaChuaLaptop
             DataRow[] r =tblNHANVIEN.Select("Username='" + tbTK.Text + "' and Password ='" + tbMK.Text + "'");
             if (r.Count()>0)
             {
-                frmMain f = (frmMain)this.MdiParent;
+
                 fMain.Text = "Quản lý Tiệm Sửa Chữa Laptop - Chào " + r[0]["TenNV"].ToString();
                 fMain.maNV = r[0]["MaNV"].ToString();
-                capnhat = true;
-                f.enabledbutton();
                 this.Close();
             }
             else
